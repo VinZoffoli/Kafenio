@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fadein {
+  opacity: 0;
+  animation: heroFadeIn 1s ease-out forwards;
+}
+
+.hero-fadein-delay-1 {
+  opacity: 0;
+  animation: heroFadeIn 1s ease-out 0.3s forwards;
+}
+
+.hero-fadein-delay-2 {
+  opacity: 0;
+  animation: heroFadeIn 1s ease-out 0.6s forwards;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-epitaph: 'epitaph', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Kautiva";
+  src: url("/fonts/Kautiva Pro Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-kautiva {
+  font-family: "Kautiva", serif;
+}
+
+
+@font-face {
+  font-family: "Epitaph";
+  src: url("/fonts/Epitaph-Regular-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-epitaph {
+  font-family: "Epitaph", serif;
+}
+
