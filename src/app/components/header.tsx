@@ -31,14 +31,14 @@ export default function Header() {
 
                             {/* Columna izquierda */}
                             <div className="space-y-3">
-                                <Link href="" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/contact-us" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
                                     <div className="p-1 rounded-lg">
                                         <img src="/assets/Icon.svg" alt="Contact" />
                                     </div>
                                     <span className="font-medium">Contact Us</span>
                                 </Link>
 
-                                <Link href="/" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/careers" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
                                     <div className="p-1 rounded-lg">
                                         <img src="/assets/icon_careers.svg" alt="Careers" />
                                     </div>
@@ -55,14 +55,14 @@ export default function Header() {
 
                             {/* Columna derecha */}
                             <div className="space-y-3">
-                                <Link href="/" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/happenings" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
                                     <div className="p-1 rounded-lg">
                                         <img src="/assets/icon_happenings.svg" alt="Happenings" />
                                     </div>
                                     <span className="font-medium">Happenings</span>
                                 </Link>
 
-                                <Link href="/" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/join-the-club" className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
                                     <div className="p-1 rounded-lg">
                                         <img src="/assets/icon_join.svg" alt="Join" />
                                     </div>
