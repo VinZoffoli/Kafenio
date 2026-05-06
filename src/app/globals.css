@@ -79,3 +79,24 @@ body {
   opacity: 0;
   animation: heroFadeIn 1s ease-out 0.6s forwards;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tab-button {
+    display: inline-block;
+}
+
+.tab-button::before {
+    content: attr(data-text);
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    font-weight: 600;
+}
