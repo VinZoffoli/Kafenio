@@ -5,7 +5,8 @@ import Footer from "./components/footer";
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '500', '700'], // ajusta según necesites
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
 });
 
 export default function RootLayout({
@@ -14,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className={roboto.variable}>
+      <body>
         <Header />
         {children}
         <Footer />

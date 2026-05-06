@@ -67,10 +67,10 @@ interface SectionTitleProps {
 
 function SectionTitle({ title, subtitle }: SectionTitleProps) {
     return (
-        <div className="flex flex-col items-center text-center mb-[40px]">
-            <h2 className="text-[38px] font-bold leading-tight font-epitaph text-[#043e6f]">{title}</h2>
+        <div className="flex flex-col items-center text-center mb-[30px] md:mb-[40px]">
+            <h2 className="text-[38px] lg:text-[38px] font-bold leading-tight font-epitaph text-[#043e6f]">{title}</h2>
             {subtitle && (
-                <p className="text-[24px] font-kautiva font-bold text-[#3d3d3d] mt-1 uppercase tracking-wide">
+                <p className="text-[18px] md:text-[20px] lg:text-[24px] font-kautiva font-bold text-[#3d3d3d] mt-1 uppercase tracking-wide">
                     {subtitle}
                 </p>
             )}
@@ -87,13 +87,13 @@ interface MenuCardProps {
 
 function MenuCard({ title, price, description }: MenuCardProps) {
     return (
-        <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center gap-3">
-            <h3 className="text-[28px] font-epitaph text-[#022542] leading-[31px]]">{title}</h3>
+        <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 flex flex-col items-center text-center gap-3">
+            <h3 className="text-[28px] lg:text-[28px] font-epitaph text-[#022542] leading-[1.1]">{title}</h3>
             {price && (
-                <p className="text-[16px] font-semibold font-kautiva text-[#525252]">{price}</p>
+                <p className="text-[15px] md:text-[16px] font-semibold font-kautiva text-[#525252]">{price}</p>
             )}
             {description && (
-                <p className="text-[16px] leading-[21px] text-[#525252] whitespace-pre-line">{description}</p>
+                <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[20px] md:leading-[21px] text-[#525252] whitespace-pre-line">{description}</p>
             )}
         </div>
     );
@@ -103,48 +103,48 @@ export default function Catering() {
     return (
         <main>
             {/* HERO */}
-            <section className="relative w-full h-[45vh]">
+            <section className="relative w-full h-[400px] md:h-[45vh]">
                 <img
                     src="/assets/hero_catering.webp"
                     alt="Catering hero"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0" />
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
                     <img
                         src="/assets/icono_catering2.svg"
                         alt="icono catering"
-                        className="w-[232px] h-auto mb-2 hero-fadein"
+                        className="w-[140px] md:w-[180px] lg:w-[232px] h-auto mb-2 hero-fadein"
                     />
-                    <h1 className="text-[64px] leading-tight font-epitaph text-white hero-fadein">
+                    <h1 className="text-[40px] md:text-[52px] lg:text-[64px] leading-tight font-epitaph text-white hero-fadein">
                         CATERING
                     </h1>
-                    <p className="text-[40px] font-kautiva font-bold text-white mt-2 hero-fadein-delay-1">
+                    <p className="text-[26px] md:text-[32px] lg:text-[40px] font-kautiva font-bold text-white mt-2 hero-fadein-delay-1">
                         Kafenio
                     </p>
                 </div>
             </section>
 
             {/* INTRO SECTION */}
-            <section className="w-full py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center px-6 flex flex-col items-center text-center">
-                <img src="/assets/icono_catering.svg" alt="icon" className="w-[68px] h-auto mb-4" />
+            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center px-6 flex flex-col items-center text-center">
+                <img src="/assets/icono_catering.svg" alt="icon" className="w-[52px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
 
-                <h2 className="text-[48px] leading-tight font-epitaph text-[#04589C]">
+                <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
                     BRING KAFENIO TO YOUR TABLE
                 </h2>
 
-                <p className="text-[24px] font-bold font-kautiva text-[#85431a] mt-2 capitalize">
+                <p className="text-[20px] md:text-[20px] lg:text-[24px] font-bold font-kautiva text-[#85431a] mt-2 capitalize">
                     Stay Connected And Enjoy A Little Extra Every Time You Visit
                 </p>
 
-                <p className="text-[16px] leading-[26px] text-[#525252] max-w-[620px] mt-4">
-                    Hosting a meeting, family gathering, or weekend brunch?<br />
+                <p className="text-[15px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#525252] max-w-[620px] mt-4">
+                    Hosting a meeting, family gathering, or weekend brunch?<br className="hidden md:block" />
                     Let Kafenio handle the food so you can focus on the moment. From fresh salads and wraps to our signature Greek favorites, we'll craft a spread everyone will love, simple to prep, easy to enjoy, and full of flavor.
                 </p>
-
                 <a
+
                     href="mailto:catering@kafeniogreekdiner.com"
-                    className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-8`}
+                    className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
                 >
                     Request Catering
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -154,9 +154,9 @@ export default function Catering() {
             </section>
 
             {/* BOX LUNCH / DINNER */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="BOX LUNCH / DINNER" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-3 gap-6 max-w-[1040px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1040px] w-full">
                     {menuData.boxLunch.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -164,9 +164,9 @@ export default function Catering() {
             </section>
 
             {/* À LA CARTE */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="À LA CARTE" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-3 gap-6 max-w-[1040px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1040px] w-full">
                     {menuData.alaCarte.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -174,7 +174,7 @@ export default function Catering() {
             </section>
 
             {/* PROTEINS */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="PROTEINS" subtitle="* Minimum Order 8 *" />
                 <div className="max-w-[1040px] w-full">
                     {menuData.proteins.map((item) => (
@@ -184,7 +184,7 @@ export default function Catering() {
             </section>
 
             {/* DIPS AND DRESSINGS */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="DIPS AND DRESSINGS" subtitle="By The Pint and Quart" />
                 <div className="max-w-[1040px] w-full">
                     {menuData.dips.map((item) => (
@@ -194,9 +194,9 @@ export default function Catering() {
             </section>
 
             {/* DESSERTS */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="DESSERTS" />
-                <div className="grid grid-cols-2 gap-6 max-w-[700px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
                     {menuData.desserts.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -204,9 +204,9 @@ export default function Catering() {
             </section>
 
             {/* DRINKS */}
-            <section className="w-full py-[80px] bg-white px-6 flex flex-col items-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="DRINKS" />
-                <div className="grid grid-cols-2 gap-6 max-w-[700px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
                     {menuData.drinks.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -215,9 +215,9 @@ export default function Catering() {
 
             {/* FOOTER NOTE */}
             <section className="w-full py-6 bg-white px-6 flex flex-col items-center text-center border-t border-[#ddd]">
-                <p className=" font-kautiva text-[24px] text-[#3d3d3d]">Catering Pizzas Available through the Greek Menu</p>
-                <p className=" font-kautiva text-[24px] text-[#3d3d3d]">Contact Us Via Email for All Catering Inquiries!</p>
-                <p className=" font-kautiva text-[24px] text-[#3d3d3d]">Service Charge 10% | Service and Delivery 20% (Limited Delivery Range) | Utensils and Plates $1 Per Set.</p>
+                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Catering Pizzas Available through the Greek Menu</p>
+                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Contact Us Via Email for All Catering Inquiries!</p>
+                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Service Charge 10% | Service and Delivery 20% (Limited Delivery Range) | Utensils and Plates $1 Per Set.</p>
             </section>
         </main>
     );

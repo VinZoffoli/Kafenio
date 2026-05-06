@@ -133,7 +133,7 @@ export default function Careers() {
     return (
         <main>
             {/* HERO — fondo azul con patrón */}
-            <section className="relative w-full h-[45vh]">
+            <section className="relative w-full h-[400px] md:h-[45vh]">
                 <img
                     src="/assets/hero_careers.webp"
                     alt="Careers hero"
@@ -144,12 +144,12 @@ export default function Careers() {
                     <img
                         src="/assets/icono_careers1.svg"
                         alt="icono contact"
-                        className="w-[40px] h-auto mb-2 hero-fadein"
+                        className="w-[28px] md:w-[34px] lg:w-[40px] h-auto mb-2 hero-fadein"
                     />
-                    <h1 className="text-[72px] leading-tight font-epitaph text-white hero-fadein">
+                    <h1 className="text-[48px] md:text-[58px] lg:text-[72px] leading-tight font-epitaph text-white hero-fadein">
                         CAREERS
                     </h1>
-                    <p className="text-[40px] font-kautiva font-bold text-white mt-2 hero-fadein-delay-1">
+                    <p className="text-[32px] md:text-[32px] lg:text-[40px] font-kautiva font-bold text-white mt-2 hero-fadein-delay-1">
                         Kafenio
                     </p>
                 </div>
@@ -157,7 +157,7 @@ export default function Careers() {
 
             {/* FORM SECTION */}
             <section
-                className="w-[full] py-[80px] px-6 flex flex-col items-center text-center"
+                className="w-full py-[50px] md:py-[80px] px-6 flex flex-col items-center text-center"
                 style={{
                     backgroundImage: "url('/assets/fondo_giftcard.webp')",
                     backgroundRepeat: "no-repeat",
@@ -169,21 +169,21 @@ export default function Careers() {
                 <img
                     src="/assets/icono_careers2.svg"
                     alt="icon"
-                    className="w-[100px] h-auto mb-4"
+                    className="w-[70px] md:w-[85px] lg:w-[100px] h-auto mb-4"
                 />
 
                 {/* Título */}
-                <h2 className="text-[48px] leading-tight font-epitaph text-[#04589C]">
+                <h2 className="text-[36px] md:text-[42px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
                     JOIN THE KAFENIO CREW
                 </h2>
 
                 {/* Subtítulo */}
-                <p className="text-[32px] font-bold font-kautiva text-[#85431a] mt-2">
+                <p className="text-[20px] md:text-[26px] lg:text-[32px] font-bold font-kautiva text-[#85431a] mt-2 leading-[1.2]">
                     Good Vibes, Great Food, And A Team That Feels Like Family.
                 </p>
 
                 {/* Formulario */}
-                <div className="bg-white rounded-2xl shadow-md mt-10 w-full max-w-[610px] px-8 py-10 text-left">
+                <div className="bg-white rounded-2xl shadow-md mt-8 md:mt-10 w-full max-w-[610px] px-6 md:px-8 py-8 md:py-10 text-left">
 
                     {isSubmitSuccessful ? (
                         <div className="flex flex-col items-center text-center gap-4 py-8">
@@ -191,8 +191,8 @@ export default function Careers() {
                                 <circle cx="24" cy="24" r="24" fill="#04589C" fillOpacity="0.1" />
                                 <path d="M14 24L21 31L34 17" stroke="#04589C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <h3 className="text-[24px] font-epitaph text-[#04589C]">Application Sent!</h3>
-                            <p className="text-[15px] text-[#525252]">Thank you for your interest in joining the Kafenio crew. We'll be in touch soon!</p>
+                            <h3 className="text-[22px] md:text-[24px] font-epitaph text-[#04589C]">Application Sent!</h3>
+                            <p className="text-[14px] md:text-[15px] text-[#525252]">Thank you for your interest in joining the Kafenio crew. We'll be in touch soon!</p>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
@@ -207,7 +207,7 @@ export default function Careers() {
                             </Field>
 
                             {/* Email + Phone */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
                                 <Field label="Email" required error={errors.email?.message}>
                                     <input
                                         {...register("email")}
@@ -277,7 +277,7 @@ export default function Careers() {
 
                             {/* Resume upload */}
                             <Field label="Resume" error={errors.resume?.message as string}>
-                                <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-[#d1d5db] rounded-lg px-4 py-8 cursor-pointer hover:border-[#04589C] transition text-center">
+                                <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-[#d1d5db] rounded-lg px-4 py-6 md:py-8 cursor-pointer hover:border-[#04589C] transition text-center">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                                         <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" />
