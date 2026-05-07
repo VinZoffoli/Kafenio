@@ -100,3 +100,15 @@ body {
     overflow: hidden;
     font-weight: 600;
 }
+
+@layer utilities {
+    .font-epitaph {
+        font-family: "Epitaph", serif;
+    }
+    .font-kautiva {
+        font-family: "Kautiva", serif;
+    }
+    .font-gcgrind {
+        font-family: "GCGrind", sans-serif;
+    }
+}

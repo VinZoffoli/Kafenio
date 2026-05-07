@@ -8,6 +8,7 @@ const roboto = Roboto({
     weight: ["400", "600"],
 });
 
+
 const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["400", "600"],
@@ -257,7 +258,7 @@ function SubSectionBlock({ title, subtitle, footnote, items }: SubSectionBlockPr
 
                 {/* Subtítulo */}
                 {subtitle && (
-                    <p className="text-[19px] md:text-[20px] font-kautiva font-normal text-[#022542] mt-2 uppercase">
+                    <p className="text-[21px] md:text-[24px] font-kautiva font-normal text-[#022542] mt-2 uppercase">
                         {subtitle}
                     </p>
                 )}
@@ -381,6 +382,8 @@ export default function Menu() {
                     (items ?? []) as unknown as MenuItemRow[]
                 ));
             }
+
+
         }
 
         loadMenu();
@@ -442,6 +445,34 @@ export default function Menu() {
             });
         }
     }, [activeTab]);
+
+    // ⬇️ NUEVO useEffect: detectar hash de URL al cargar y hacer scroll a la sección
+    useEffect(() => {
+        // Solo correr cuando ya cargaron los datos del menú
+        const totalSubsections = Object.values(menuData).reduce(
+            (acc, tab) => acc + tab.subsections.length,
+            0
+        );
+        if (totalSubsections === 0) return;
+
+        const hash = window.location.hash.replace("#", "");
+        if (!hash) return;
+
+        // Esperar a que el DOM termine de renderizar las secciones
+        const timer = setTimeout(() => {
+            const section = document.getElementById(hash);
+            if (section) {
+                const currentHeaderHeight = window.scrollY > 10 ? 60 : 80;
+                const offset = currentHeaderHeight + 80;
+                const top = section.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: "smooth" });
+                setActiveTab(hash);
+            }
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, [menuData]);
+    // ⬆️ FIN del nuevo useEffect
 
     const handleTabClick = (id: string) => {
         const section = document.getElementById(id);

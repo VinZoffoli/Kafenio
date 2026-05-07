@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Barlow_Semi_Condensed } from "next/font/google";
 import { Roboto } from "next/font/google";
 import HappeningsCards from "@/app/components/Happeningscards";
+import Link from "next/link";
 
 const barlow = Barlow_Semi_Condensed({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function Home() {
           {/* Título */}
           <h2
             className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]"
+            style={{ fontFamily: "Epitaph, serif" }}
           >
             A MODERN TAKE ON THE GREEK CAFÉ
           </h2>
@@ -150,11 +152,14 @@ export default function Home() {
           {/* Grid responsive: mobile = 1 col stacked / tablet = 2 cols / desktop = 4 cols layout original */}
           <div
             className="grid gap-3 md:gap-4 mt-6 w-full max-w-[1100px] hero-fadein
-                       grid-cols-1 md:grid-cols-2 lg:grid-cols-4
-                       lg:grid-rows-2"
+               grid-cols-1 md:grid-cols-2 lg:grid-cols-4
+               lg:grid-rows-2"
           >
             {/* Coffee */}
-            <div className="relative md:col-span-2 lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden group h-[240px] md:h-[300px] lg:h-[560px]">
+            <Link
+              href="/menu#coffee-espresso"
+              className="relative md:col-span-2 lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden group h-[240px] md:h-[300px] lg:h-[560px] cursor-pointer block"
+            >
               <picture>
                 <source media="(min-width: 768px)" srcSet="/assets/coffee.webp" />
                 <img
@@ -167,10 +172,13 @@ export default function Home() {
               <span className="absolute bottom-4 left-4 text-white text-[28px] md:text-[34px] lg:text-[40px] font-bold font-kautiva leading-tight text-left">
                 Coffee & Espresso
               </span>
-            </div>
+            </Link>
 
             {/* Breakfast */}
-            <div className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px]">
+            <Link
+              href="/menu#breakfast"
+              className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+            >
               <picture>
                 <source media="(min-width: 768px)" srcSet="/assets/breakfast.webp" />
                 <img
@@ -181,10 +189,13 @@ export default function Home() {
               </picture>
               <div className="absolute inset-0" />
               <span className="absolute bottom-4 left-4 text-white text-[28px] md:text-[34px] lg:text-[40px] font-bold font-kautiva">Breakfast</span>
-            </div>
+            </Link>
 
             {/* Beverages */}
-            <div className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px]">
+            <Link
+              href="/menu#beverages"
+              className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+            >
               <picture>
                 <source media="(min-width: 768px)" srcSet="/assets/beverages.webp" />
                 <img
@@ -195,10 +206,13 @@ export default function Home() {
               </picture>
               <div className="absolute inset-0" />
               <span className="absolute bottom-4 left-4 text-white text-[28px] md:text-[34px] lg:text-[40px] font-bold font-kautiva">Beverages</span>
-            </div>
+            </Link>
 
             {/* Desserts */}
-            <div className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px]">
+            <Link
+              href="/menu#desserts"
+              className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+            >
               <picture>
                 <source media="(min-width: 768px)" srcSet="/assets/desserts.webp" />
                 <img
@@ -209,10 +223,13 @@ export default function Home() {
               </picture>
               <div className="absolute inset-0" />
               <span className="absolute bottom-4 left-4 text-white text-[28px] md:text-[34px] lg:text-[40px] font-bold font-kautiva">Desserts</span>
-            </div>
+            </Link>
 
             {/* Lunch + Dinner */}
-            <div className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px]">
+            <Link
+              href="/menu#lunch-dinner"
+              className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+            >
               <picture>
                 <source media="(min-width: 768px)" srcSet="/assets/lunch.webp" />
                 <img
@@ -223,7 +240,7 @@ export default function Home() {
               </picture>
               <div className="absolute inset-0" />
               <span className="absolute bottom-4 left-4 text-white text-[28px] md:text-[34px] lg:text-[40px] font-bold font-kautiva">Lunch + Dinner</span>
-            </div>
+            </Link>
 
           </div>
 

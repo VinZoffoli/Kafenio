@@ -26,8 +26,8 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 max-w-[580px] items-center lg:items-start text-center lg:text-left">
                     <img src="/assets/logowebp.webp" alt="Kafenio" className="w-[260px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
 
-                    <p className="text-white text-[28px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-bold mt-2">
-                        YOUR GREEK FIX, ANYTIME
+                    <p className="text-white text-[28px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-normal mt-2">
+                        Your Greek Fix, Anytime
                     </p>
                     <p className="text-white text-[15px] lg:text-[16px] leading-[22px] lg:leading-[24px] max-w-[540px]">
                         Craving a gyro or your morning latte? Order online and get your Kafenio favorites fast, fresh, easy, and ready when you are.
