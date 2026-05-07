@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Roboto, Montserrat } from "next/font/google";
 import { supabase, supabaseClientId } from "@/lib/supabase";
@@ -311,7 +311,7 @@ function TabSectionBlock({ id, subsections }: TabSectionBlockProps) {
     );
 }
 
-export default function Menu() {
+function MenuContent() {
     const searchParams = useSearchParams();
     const [activeTab, setActiveTab] = useState(tabs[0].id);
     const [headerHeight, setHeaderHeight] = useState(80);
@@ -581,5 +581,13 @@ export default function Menu() {
                 </div>
             </div>
         </main>
+    );
+}
+
+export default function Menu() {
+    return (
+        <Suspense>
+            <MenuContent />
+        </Suspense>
     );
 }
