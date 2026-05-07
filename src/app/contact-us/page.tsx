@@ -2,6 +2,7 @@
 
 import { Roboto } from "next/font/google";
 import { useForm } from "react-hook-form";
+import OpeningHours from "@/app/components/OpeningHours";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
@@ -264,13 +265,7 @@ export default function ContactUs() {
             </div>*/}
 
                         {/* Opening Hours */}
-                        <div className="w-full flex flex-col items-center lg:items-start">
-                            <p className="text-[20px] md:text-[22px] lg:text-[24px] font-bold font-kautiva text-[#ab5622]">Opening Hours</p>
-                            <p className="text-[14px] lg:text-[16px] leading-[24px] lg:leading-[26px] text-[#3d3d3d] mt-1">
-                                <span className="font-bold">Monday to Saturday</span> 9 am to 9 pm<br />
-                                <span className="font-bold">Sunday</span> 9 am to 3 pm
-                            </p>
-                        </div>
+                        <OpeningHours />
 
                         {/* Botón */}
                         <a
