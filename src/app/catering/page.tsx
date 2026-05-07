@@ -9,7 +9,7 @@ const menuData = {
     boxLunch: [
         {
             title: "WRAP MEAL",
-            price: "$13.50",
+            price: "$12.50",
             description: "(Choice Of Gyro, Chicken Or Falafel)\nPita, Tzatziki, Feta Spread, Lettuce, Tomato, Onion And Choice Of A Side.\n\nSides: Rice Pilaf, Greek Potatoes Or Side Greek Salad\n\n**Sub Tahini | Sub Gluten Free Pita",
         },
         {
@@ -20,12 +20,12 @@ const menuData = {
         {
             title: "SHAREABLE SALADS",
             price: null,
-            description: "1/2 Catering Tray (Serves 9) $33\n\nFull Catering Tray (Serves 20) $72\n\nGreek Salad – Romaine, Feta, Red Onion, Cucumber, Tomato Wedges, Kalamata Olives, Pepperoncini And Choice Of Dressing.\n\nDressings: Vinaigrette, Greek Lemon Or Caesar Dressing.",
+            description: "1/2 Catering Tray (Serves 9) $32\n\nFull Catering Tray (Serves 20) $72\n\nGreek Salad – Romaine, Feta, Red Onion, Cucumber, Tomato Wedges, Kalamata Olives, Pepperoncini And Choice Of Dressing.\n\nDressings: Vinaigrette, Greek Lemon Or Caesar Dressing.",
         },
     ],
     alaCarte: [
         { title: "BYO WRAP", price: "$10.00", description: "(Choice Of Gyro, Chicken Or Falafel)\nPita, Tzatziki Or Tahini, Lettuce, Tomato And Onion." },
-        { title: "SPANAKOPITA", price: "$3.00", description: null },
+        { title: "SPANAKOPITA", price: "$3.50", description: null },
         { title: "PILAF", price: "$4.00", description: null },
         { title: "ROASTED VEGETABLES", price: "$5.00", description: null },
         { title: "GREEK POTATOES", price: "$4.50", description: null },
@@ -90,7 +90,7 @@ function MenuCard({ title, price, description }: MenuCardProps) {
         <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 flex flex-col items-center text-center gap-3">
             <h3 className="text-[28px] lg:text-[28px] font-epitaph text-[#022542] leading-[1.1]">{title}</h3>
             {price && (
-                <p className="text-[15px] md:text-[16px] font-semibold font-kautiva text-[#525252]">{price}</p>
+                <p className="text-[16px] md:text-[16px] font-semibold text-[#525252]">{price}</p>
             )}
             {description && (
                 <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[20px] md:leading-[21px] text-[#525252] whitespace-pre-line">{description}</p>
@@ -156,7 +156,7 @@ export default function Catering() {
             {/* BOX LUNCH / DINNER */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="BOX LUNCH / DINNER" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1040px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1100px] w-full">
                     {menuData.boxLunch.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -166,7 +166,7 @@ export default function Catering() {
             {/* À LA CARTE */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="À LA CARTE" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1040px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1100px] w-full">
                     {menuData.alaCarte.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -176,7 +176,7 @@ export default function Catering() {
             {/* PROTEINS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="PROTEINS" subtitle="* Minimum Order 8 *" />
-                <div className="max-w-[1040px] w-full">
+                <div className="max-w-[1100px] w-full">
                     {menuData.proteins.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}
@@ -186,7 +186,7 @@ export default function Catering() {
             {/* DIPS AND DRESSINGS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
                 <SectionTitle title="DIPS AND DRESSINGS" subtitle="By The Pint and Quart" />
-                <div className="max-w-[1040px] w-full">
+                <div className="max-w-[1100px] w-full">
                     {menuData.dips.map((item) => (
                         <MenuCard key={item.title} {...item} />
                     ))}

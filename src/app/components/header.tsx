@@ -42,7 +42,14 @@ export default function Header() {
     // Helper: clase del link mobile (resalta si está activo)
     const mobileLinkClass = (href: string) =>
         `flex items-center gap-3 px-4 h-[72px] rounded-lg transition ${pathname === href
-            ? "bg-[#f3f3f3]"
+            ? "bg-[#e0f1ff]"
+            : "hover:bg-gray-100"
+        }`;
+
+    // Helper: clase de cada item del dropdown desktop (resalta si está activo)
+    const dropdownItemClass = (href: string) =>
+        `flex items-start gap-4 p-3 rounded-lg transition ${pathname === href
+            ? "bg-[#e0f1ff]"
             : "hover:bg-gray-100"
         }`;
 
@@ -54,13 +61,12 @@ export default function Header() {
             >
                 <div className="max-w-[1100px] mx-auto h-full flex items-center justify-between px-4 lg:px-0">
 
-                    {/* Logo */}
+                    {/* Logo - tamaño fijo para que el nav no se mueva al hacer scroll */}
                     <Link href="/" className="flex-shrink-0">
                         <img
                             src="/assets/logokafenio.svg"
                             alt="logo"
-                            className={`cursor-pointer transition-all duration-300 ${scrolled ? "w-[120px] lg:w-[160px]" : "w-[140px] lg:w-[200px]"
-                                }`}
+                            className="cursor-pointer w-[140px] lg:w-[200px]"
                         />
                     </Link>
 
@@ -97,8 +103,13 @@ export default function Header() {
 
                         {/* Dropdown More */}
                         <div className="relative group inline-block">
-                            {/* Botón More */}
-                            <div className="w-[81.90px] flex items-center justify-center gap-1 relative text-gray-700 after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-black after:w-0 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
+                            {/* Botón More - se marca activo si la ruta es una de las del dropdown */}
+                            <div
+                                className={`w-[81.90px] flex items-center justify-center gap-1 relative after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-black after:w-0 after:transition-all after:duration-300 hover:after:w-full cursor-pointer ${["/contact-us", "/happenings", "/careers", "/join-the-club", "/about"].includes(pathname)
+                                        ? "text-black after:w-full"
+                                        : "text-gray-700"
+                                    }`}
+                            >
                                 More
                                 <img src="/assets/Arrow_Down.svg" alt="arrow" className="w-[20px] h-[20px]" />
                             </div>
@@ -107,7 +118,7 @@ export default function Header() {
                             <div className="fixed left-1/2 -translate-x-1/2 mt-4 w-[800px] bg-white rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
 
                                 {/* Contact Us */}
-                                <Link href="/contact-us" className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/contact-us" className={dropdownItemClass("/contact-us")}>
                                     <div className="flex-shrink-0">
                                         <img src="/assets/Icon.svg" alt="Contact" className="w-[48px] h-[48px]" />
                                     </div>
@@ -118,7 +129,7 @@ export default function Header() {
                                 </Link>
 
                                 {/* Happenings */}
-                                <Link href="/happenings" className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/happenings" className={dropdownItemClass("/happenings")}>
                                     <div className="flex-shrink-0">
                                         <img src="/assets/icon_happenings.svg" alt="Happenings" className="w-[48px] h-[48px]" />
                                     </div>
@@ -129,7 +140,7 @@ export default function Header() {
                                 </Link>
 
                                 {/* Careers */}
-                                <Link href="/careers" className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/careers" className={dropdownItemClass("/careers")}>
                                     <div className="flex-shrink-0">
                                         <img src="/assets/icon_careers.svg" alt="Careers" className="w-[48px] h-[48px]" />
                                     </div>
@@ -140,7 +151,7 @@ export default function Header() {
                                 </Link>
 
                                 {/* Join the Club */}
-                                <Link href="/join-the-club" className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/join-the-club" className={dropdownItemClass("/join-the-club")}>
                                     <div className="flex-shrink-0">
                                         <img src="/assets/icon_join.svg" alt="Join" className="w-[48px] h-[48px]" />
                                     </div>
@@ -151,7 +162,7 @@ export default function Header() {
                                 </Link>
 
                                 {/* About Us */}
-                                <Link href="/about" className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-100 transition">
+                                <Link href="/about" className={dropdownItemClass("/about")}>
                                     <div className="flex-shrink-0">
                                         <img src="/assets/icon_about.svg" alt="About" className="w-[48px] h-[48px]" />
                                     </div>
@@ -167,7 +178,7 @@ export default function Header() {
 
                     {/* Right side DESKTOP */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <Link href="/order_online">
+                        <Link href="/order-online">
                             <button className="cursor-pointer bg-[#04589c] text-white px-9 py-2 rounded-lg font-semibold text-[20px] leading-[24px] border border-transparent hover:bg-white hover:text-[#04589c] hover:border-[#04589c] transition">
                                 Order Online
                             </button>
@@ -195,7 +206,7 @@ export default function Header() {
 
                     {/* Right side MOBILE/TABLET */}
                     <div className="lg:hidden flex items-center gap-2">
-                        <Link href="/order_online">
+                        <Link href="/order-online">
                             <button className="cursor-pointer bg-[#04589c] text-white px-4 h-[44px] rounded-lg font-semibold text-[14px] sm:text-[16px] leading-[20px] hover:opacity-90 transition whitespace-nowrap">
                                 Order Online
                             </button>

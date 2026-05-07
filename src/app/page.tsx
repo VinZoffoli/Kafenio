@@ -47,7 +47,7 @@ export default function Home() {
             {/* Botón 1 */}
             <a
               href="/order-online"
-              className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+              className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 hover:opacity-90 transition`}
             >
               Order Online
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -57,8 +57,8 @@ export default function Home() {
 
             {/* Botón 2 */}
             <a
-              href="/visit"
-              className={`${roboto.className} bg-white text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 border border-[#04589C] hover:opacity-90 transition`}
+              href="/catering"
+              className={`${roboto.className} h-[44px] bg-white text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 border border-[#04589C] hover:opacity-90 transition`}
             >
               Catering
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 hidden sm:block">
@@ -103,7 +103,7 @@ export default function Home() {
 
           <a
             href="/about-us"
-            className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] mt-2 justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+            className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] mt-2 justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
           >
             About Us
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -246,7 +246,7 @@ export default function Home() {
 
           <a
             href="/menu"
-            className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+            className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
           >
             Full Menu
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -284,7 +284,7 @@ export default function Home() {
 
             <a
               href="/catering"
-              className={`${roboto.className} max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+              className={`${roboto.className} h-[44px] max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
             >
               Book Your Catering
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -346,7 +346,7 @@ export default function Home() {
 
         <a
           href="/happenings"
-          className={`${roboto.className} mt-[24px] lg:mt-[30px] max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+          className={`${roboto.className} h-[44px] mt-[24px] lg:mt-[30px] max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
         >
           See What's New
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -394,7 +394,8 @@ export default function Home() {
 
         {/* Botón Toast */}
         <a
-          href="/happenings"
+          href="https://order.toasttab.com/online/kafenio-avondale-2700-e-college-ave"
+          target="_blank"
           className={`${roboto.className} mt-[24px] lg:mt-[30px] w-full max-w-[200px] md:max-w-[236px] h-[64px] md:h-[80px] bg-[#04589C] text-white px-[24px] md:px-[40px] py-[16px] md:py-[20px] justify-center rounded-[16px] font-semibold text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="200" height="54" viewBox="0 0 200 54" fill="none" className="w-[140px] md:w-[180px] lg:w-[200px] h-auto">
@@ -521,7 +522,7 @@ export default function Home() {
               href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
+              className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
             >
               Open In Map
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
