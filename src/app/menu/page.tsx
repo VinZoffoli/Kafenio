@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { Roboto, Montserrat } from "next/font/google";
 import { supabase, supabaseClientId } from "@/lib/supabase";
 
@@ -311,6 +312,7 @@ function TabSectionBlock({ id, subsections }: TabSectionBlockProps) {
 }
 
 export default function Menu() {
+    const searchParams = useSearchParams();
     const [activeTab, setActiveTab] = useState(tabs[0].id);
     const [headerHeight, setHeaderHeight] = useState(80);
     const tabsContainerRef = useRef<HTMLDivElement>(null);
@@ -446,33 +448,29 @@ export default function Menu() {
         }
     }, [activeTab]);
 
-    // ⬇️ NUEVO useEffect: detectar hash de URL al cargar y hacer scroll a la sección
     useEffect(() => {
-        // Solo correr cuando ya cargaron los datos del menú
+        const tab = searchParams.get("tab");
+        if (!tab) return;
+
         const totalSubsections = Object.values(menuData).reduce(
-            (acc, tab) => acc + tab.subsections.length,
+            (acc, t) => acc + t.subsections.length,
             0
         );
         if (totalSubsections === 0) return;
 
-        const hash = window.location.hash.replace("#", "");
-        if (!hash) return;
-
-        // Esperar a que el DOM termine de renderizar las secciones
         const timer = setTimeout(() => {
-            const section = document.getElementById(hash);
+            const section = document.getElementById(tab);
             if (section) {
                 const currentHeaderHeight = window.scrollY > 10 ? 60 : 80;
                 const offset = currentHeaderHeight + 80;
                 const top = section.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({ top, behavior: "smooth" });
-                setActiveTab(hash);
+                setActiveTab(tab);
             }
         }, 300);
 
         return () => clearTimeout(timer);
-    }, [menuData]);
-    // ⬆️ FIN del nuevo useEffect
+    }, [searchParams, menuData]);
 
     const handleTabClick = (id: string) => {
         const section = document.getElementById(id);

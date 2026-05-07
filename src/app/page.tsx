@@ -157,7 +157,7 @@ export default function Home() {
           >
             {/* Coffee */}
             <Link
-              href="/menu#coffee-espresso"
+              href="/menu?tab=coffee-espresso"
               className="relative md:col-span-2 lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden group h-[240px] md:h-[300px] lg:h-[560px] cursor-pointer block"
             >
               <picture>
@@ -176,7 +176,7 @@ export default function Home() {
 
             {/* Breakfast */}
             <Link
-              href="/menu#breakfast"
+              href="/menu?tab=breakfast"
               className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
             >
               <picture>
@@ -193,7 +193,7 @@ export default function Home() {
 
             {/* Beverages */}
             <Link
-              href="/menu#beverages"
+              href="/menu?tab=beverages"
               className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
             >
               <picture>
@@ -210,7 +210,7 @@ export default function Home() {
 
             {/* Desserts */}
             <Link
-              href="/menu#desserts"
+              href="/menu?tab=desserts"
               className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
             >
               <picture>
@@ -227,7 +227,7 @@ export default function Home() {
 
             {/* Lunch + Dinner */}
             <Link
-              href="/menu#lunch-dinner"
+              href="/menu?tab=lunch-dinner"
               className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
             >
               <picture>

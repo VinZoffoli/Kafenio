@@ -107,8 +107,17 @@ body {
     }
     .font-kautiva {
         font-family: "Kautiva", serif;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
     }
     .font-gcgrind {
         font-family: "GCGrind", sans-serif;
     }
+}
+
+/* Kautiva no tiene variante bold/semibold real — simular peso visual con text-shadow */
+.font-kautiva.font-bold,
+.font-kautiva.font-semibold {
+    font-weight: 400;
+    text-shadow: 0 0 0.8px currentColor, 0 0 0.8px currentColor, 0 0 0.8px currentColor;
 }
