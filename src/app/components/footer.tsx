@@ -41,9 +41,14 @@ export default function Footer() {
                     <p className="text-white text-[15px] lg:text-[16px] leading-[22px] lg:leading-[24px] max-w-[540px]">
                         Craving a gyro or your morning latte? Order online and get your Kafenio favorites fast, fresh, easy, and ready when you are.
                     </p>
-                    <p className="text-[#979797] leading-[20px] text-[13px] lg:text-[14px]">
+                    <a
+                        href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#979797] hover:text-white transition-colors leading-[20px] text-[13px] lg:text-[14px]"
+                    >
                         2700 E College Ave #3000, Decatur, GA 30030, United States
-                    </p>
+                    </a>
 
                     {/* Botón */}
                     <a
