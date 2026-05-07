@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+
+export const metadata: Metadata = {
+    title: "Greek Food Blog & Updates in Decatur",
+    description: "Read the Kafenio blog for Greek food tips, restaurant news, seasonal specials, and updates from Decatur GA.",
+    openGraph: {
+        title: "Greek Food Blog & Updates in Decatur",
+        description: "Read the Kafenio blog for Greek food tips, restaurant news, seasonal specials, and updates from Decatur GA.",
+        url: "https://www.kafeniogreekdiner.com/blog",
+    },
+};
 
 const roboto = Roboto({
     subsets: ["latin"],

@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import FadeIn from "@/app/components/FadeIn";
+
+export const metadata: Metadata = {
+    title: "Greek Catering in Decatur GA for Events",
+    description: "Order Greek catering in Decatur GA for parties, meetings, and events. Fresh, flavorful dishes prepared by Kafenio's kitchen.",
+    openGraph: {
+        title: "Greek Catering in Decatur GA for Events",
+        description: "Order Greek catering in Decatur GA for parties, meetings, and events. Fresh, flavorful dishes prepared by Kafenio's kitchen.",
+        url: "https://www.kafeniogreekdiner.com/catering",
+    },
+};
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -127,97 +139,109 @@ export default function Catering() {
 
             {/* INTRO SECTION */}
             <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center px-6 flex flex-col items-center text-center">
-                <img src="/assets/icono_catering.svg" alt="icon" className="w-[52px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
-
-                <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
-                    BRING KAFENIO TO YOUR TABLE
-                </h2>
-
-                <p className="text-[20px] md:text-[20px] lg:text-[24px] font-bold font-kautiva text-[#85431a] mt-2 capitalize">
-                    Stay Connected And Enjoy A Little Extra Every Time You Visit
-                </p>
-
-                <p className="text-[15px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#525252] max-w-[620px] mt-4">
-                    Hosting a meeting, family gathering, or weekend brunch?<br className="hidden md:block" />
-                    Let Kafenio handle the food so you can focus on the moment. From fresh salads and wraps to our signature Greek favorites, we'll craft a spread everyone will love, simple to prep, easy to enjoy, and full of flavor.
-                </p>
-                <a
-
-                    href="mailto:catering@kafeniogreekdiner.com"
-                    className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
-                >
-                    Request Catering
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
-                    </svg>
-                </a>
+                <FadeIn className="flex flex-col items-center text-center w-full">
+                    <img src="/assets/icono_catering.svg" alt="icon" className="w-[52px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
+                    <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
+                        BRING KAFENIO TO YOUR TABLE
+                    </h2>
+                    <p className="text-[20px] md:text-[20px] lg:text-[24px] font-bold font-kautiva text-[#85431a] mt-2 capitalize">
+                        Stay Connected And Enjoy A Little Extra Every Time You Visit
+                    </p>
+                    <p className="text-[15px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#525252] max-w-[620px] mt-4">
+                        Hosting a meeting, family gathering, or weekend brunch?<br className="hidden md:block" />
+                        Let Kafenio handle the food so you can focus on the moment. From fresh salads and wraps to our signature Greek favorites, we'll craft a spread everyone will love, simple to prep, easy to enjoy, and full of flavor.
+                    </p>
+                    <a
+                        href="mailto:catering@kafeniogreekdiner.com"
+                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
+                    >
+                        Request Catering
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                        </svg>
+                    </a>
+                </FadeIn>
             </section>
 
             {/* BOX LUNCH / DINNER */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="BOX LUNCH / DINNER" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1100px] w-full">
-                    {menuData.boxLunch.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full max-w-[1100px]">
+                    <SectionTitle title="BOX LUNCH / DINNER" subtitle="* Minimum Order 8 *" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
+                        {menuData.boxLunch.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* À LA CARTE */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="À LA CARTE" subtitle="* Minimum Order 8 *" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1100px] w-full">
-                    {menuData.alaCarte.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full max-w-[1100px]">
+                    <SectionTitle title="À LA CARTE" subtitle="* Minimum Order 8 *" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
+                        {menuData.alaCarte.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* PROTEINS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="PROTEINS" subtitle="* Minimum Order 8 *" />
-                <div className="max-w-[1100px] w-full">
-                    {menuData.proteins.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full max-w-[1100px]">
+                    <SectionTitle title="PROTEINS" subtitle="* Minimum Order 8 *" />
+                    <div className="w-full">
+                        {menuData.proteins.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* DIPS AND DRESSINGS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="DIPS AND DRESSINGS" subtitle="By The Pint and Quart" />
-                <div className="max-w-[1100px] w-full">
-                    {menuData.dips.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full max-w-[1100px]">
+                    <SectionTitle title="DIPS AND DRESSINGS" subtitle="By The Pint and Quart" />
+                    <div className="w-full">
+                        {menuData.dips.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* DESSERTS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="DESSERTS" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
-                    {menuData.desserts.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full">
+                    <SectionTitle title="DESSERTS" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
+                        {menuData.desserts.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* DRINKS */}
             <section className="w-full py-[50px] md:py-[80px] bg-white px-6 flex flex-col items-center">
-                <SectionTitle title="DRINKS" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
-                    {menuData.drinks.map((item) => (
-                        <MenuCard key={item.title} {...item} />
-                    ))}
-                </div>
+                <FadeIn className="flex flex-col items-center w-full">
+                    <SectionTitle title="DRINKS" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[700px] w-full">
+                        {menuData.drinks.map((item) => (
+                            <MenuCard key={item.title} {...item} />
+                        ))}
+                    </div>
+                </FadeIn>
             </section>
 
             {/* FOOTER NOTE */}
             <section className="w-full py-6 bg-white px-6 flex flex-col items-center text-center border-t border-[#ddd]">
-                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Catering Pizzas Available through the Greek Menu</p>
-                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Contact Us Via Email for All Catering Inquiries!</p>
-                <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Service Charge 10% | Service and Delivery 20% (Limited Delivery Range) | Utensils and Plates $1 Per Set.</p>
+                <FadeIn className="flex flex-col items-center text-center w-full">
+                    <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Catering Pizzas Available through the Greek Menu</p>
+                    <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Contact Us Via Email for All Catering Inquiries!</p>
+                    <p className="font-kautiva text-[16px] md:text-[20px] lg:text-[24px] text-[#3d3d3d]">Service Charge 10% | Service and Delivery 20% (Limited Delivery Range) | Utensils and Plates $1 Per Set.</p>
+                </FadeIn>
             </section>
         </main>
     );

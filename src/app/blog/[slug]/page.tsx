@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import type { ComponentType } from "react";
 import { postsMeta } from "@/content/blog/posts-meta";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const { slug } = await params;
+    const postMeta = postsMeta[slug];
+    return {
+        title: postMeta?.title ?? "Blog Post",
+        openGraph: {
+            title: postMeta?.title ?? "Blog Post",
+            url: `https://www.kafeniogreekdiner.com/blog/${slug}`,
+        },
+    };
+}
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "600"] });
 
@@ -16,7 +33,7 @@ export default async function BlogPost({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const metadata = postsMeta[slug];
+    const postMeta = postsMeta[slug];
     const { default: Post } = (await import(
         `@/content/blog/${slug}.md`
     )) as unknown as { default: ComponentType };
@@ -59,14 +76,14 @@ export default async function BlogPost({
 
                     {/* Title */}
                     <h1 className="font-epitaph text-[#022542] text-[30px] md:text-[38px] lg:text-[46px] uppercase leading-tight mb-4">
-                        {metadata.title}
+                        {postMeta.title}
                     </h1>
 
                     {/* Date */}
                     <p
                         className={`${roboto.className} text-[14px] md:text-[15px] font-semibold text-[#04589C] mb-6`}
                     >
-                        {metadata.date}
+                        {postMeta.date}
                     </p>
 
                     {/* Divider */}
