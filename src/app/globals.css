@@ -80,6 +80,53 @@ body {
   animation: heroFadeIn 1s ease-out 0.6s forwards;
 }
 
+/* Floating icon */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-9px); }
+}
+.animate-float {
+  animation: floatY 3.2s ease-in-out infinite;
+}
+
+/* Slow spin for decorative elements */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
+
+/* Shimmer on hover */
+@keyframes shimmer {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.22) 50%, transparent 60%);
+  transform: translateX(-120%);
+}
+.shimmer-btn:hover::after {
+  animation: shimmer 0.55s ease-out forwards;
+}
+
+/* Pulse glow for primary CTA */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(4, 88, 156, 0.35); }
+  50%       { box-shadow: 0 0 0 10px rgba(4, 88, 156, 0); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }

@@ -41,14 +41,14 @@ export default function Header() {
 
     // Helper: clase del link mobile (resalta si está activo)
     const mobileLinkClass = (href: string) =>
-        `flex items-center gap-3 px-4 h-[72px] rounded-lg transition ${pathname === href
+        `flex items-center gap-3 px-4 h-[72px]  transition ${pathname === href
             ? "bg-[#e0f1ff]"
             : "hover:bg-gray-100"
         }`;
 
     // Helper: clase de cada item del dropdown desktop (resalta si está activo)
     const dropdownItemClass = (href: string) =>
-        `flex items-start gap-4 p-3 rounded-lg transition ${pathname === href
+        `flex items-center gap-4 p-3  transition ${pathname === href
             ? "bg-[#e0f1ff]"
             : "hover:bg-gray-100"
         }`;
@@ -115,7 +115,7 @@ export default function Header() {
                             </div>
 
                             {/* Dropdown - centrado en pantalla */}
-                            <div className="fixed left-1/2 -translate-x-1/2 mt-4 w-[800px] bg-white rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div className="fixed left-1/2 -translate-x-1/2 mt-4 w-[800px] bg-white  shadow-xl p-6 grid grid-cols-2 gap-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
 
                                 {/* Contact Us */}
                                 <Link href="/contact-us" className={dropdownItemClass("/contact-us")}>
@@ -188,7 +188,7 @@ export default function Header() {
                             href="https://www.instagram.com/kafenioavondale/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group border border-[#04589c] bg-white hover:bg-[#04589c] p-1.5 rounded-lg cursor-pointer transition-colors duration-300"
+                            className="group border border-[#04589c] bg-white hover:bg-[#04589c] p-1.5  cursor-pointer transition-colors duration-300"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
