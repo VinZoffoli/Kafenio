@@ -3,46 +3,33 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
-// Datos de las cards (más fácil de mantener)
 const cards = [
     {
         image: "/assets/happening1.webp",
         title: "Beer & Wine Fiesta",
-        content: (
-            <>
-                $4 beer and wine special<br />
-                Wednesday & Sunday | All day
-            </>
-        ),
+        schedule: <>Wednesday &amp; Sunday | All day</>,
+        content: <>$4 beer and wine special</>,
     },
     {
         image: "/assets/happening2.webp",
         title: "Lunch Special",
-        content: (
-            <>
-                Monday to Friday<br />
-                11:00 AM – 3:00 PM<br />
-                Includes: Choice of Wrap, Side and Drink<br />
-                <span className="font-bold">$13.50</span>
-            </>
-        ),
+        schedule: <>Monday to Friday<br />11:00 AM – 3:00 PM</>,
+        content: <>Includes: Choice of Wrap, Side and Drink<br /><span className="font-bold">$13.50</span></>,
     },
     {
         image: "/assets/happening3.webp",
         title: "Breakfast Special",
-        content: (
-            <>
-                Monday to Friday<br />
-                9:00 AM – 2:00 PM<br />
-                <span className="font-bold">Free Coffee, Iced Coffe or Tea</span><br />
-                With the purchase of any breakfast sandwich or breakfast main.
-            </>
-        ),
+        schedule: <>Monday to Friday<br />9:00 AM – 2:00 PM</>,
+        content: <><span className="font-bold">Free Coffee, Iced Coffee or Tea</span><br />With the purchase of any breakfast sandwich or breakfast main.</>,
     },
 ];
 
-// Componente individual de card (reusable para grid y slider)
-function Card({ image, title, content }: { image: string; title: string; content: React.ReactNode }) {
+function Card({ image, title, schedule, content }: {
+    image: string;
+    title: string;
+    schedule: React.ReactNode;
+    content: React.ReactNode;
+}) {
     return (
         <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
             <div className="h-[220px] md:h-[240px] lg:h-[270px] overflow-hidden group">
@@ -56,6 +43,10 @@ function Card({ image, title, content }: { image: string; title: string; content
                 <h3 className="text-[24px] md:text-[28px] lg:text-[32px] font-bold font-kautiva text-[#061F35]">
                     {title}
                 </h3>
+                {/* Bloque de días/horario — altura fija equivalente a 2 líneas para que todas las cards alineen */}
+                <div className="min-h-[2.8em] flex items-center justify-center text-[14px] lg:text-[16px] leading-[140%] text-[#04589C] font-semibold">
+                    <p>{schedule}</p>
+                </div>
                 <img src="/assets/divisor.svg" alt="" className="w-[40px]" />
                 <p className="text-[14px] lg:text-[16px] leading-[140%] text-black">
                     {content}
@@ -129,7 +120,6 @@ export default function HappeningsCards() {
                     <div
                         key={idx}
                         className={
-                            // La 3ra card ocupa 2 cols en tablet, vuelve a 1 col en desktop
                             idx === 2 ? "sm:col-span-2 lg:col-span-1" : ""
                         }
                     >

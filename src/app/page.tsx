@@ -3,13 +3,13 @@ import { Barlow_Semi_Condensed } from "next/font/google";
 import { Roboto } from "next/font/google";
 
 export const metadata: Metadata = {
+  title: "Authentic Greek Diner in Decatur GA",
+  description: "Enjoy authentic Greek cuisine in Decatur GA at Kafenio. Fresh ingredients, classic recipes, and a welcoming diner-style atmosphere.",
+  openGraph: {
     title: "Authentic Greek Diner in Decatur GA",
     description: "Enjoy authentic Greek cuisine in Decatur GA at Kafenio. Fresh ingredients, classic recipes, and a welcoming diner-style atmosphere.",
-    openGraph: {
-        title: "Authentic Greek Diner in Decatur GA",
-        description: "Enjoy authentic Greek cuisine in Decatur GA at Kafenio. Fresh ingredients, classic recipes, and a welcoming diner-style atmosphere.",
-        url: "https://www.kafeniogreekdiner.com",
-    },
+    url: "https://www.kafeniogreekdiner.com",
+  },
 };
 import HappeningsCards from "@/app/components/Happeningscards";
 import OpeningHours from "@/app/components/OpeningHours";
@@ -31,36 +31,39 @@ export default function Home() {
     <main className="overflow-x-hidden">
 
       {/* HERO */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] min-h-[500px]">
+      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[100vh] min-h-[500px]">
         <img
           src="/assets/background.webp"
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <img
             src="/assets/logo_hero.svg"
             alt="Logo"
-            className="w-[160px] sm:w-[200px] md:w-[220px] lg:w-[240px] mb-5 hero-fadein"
+            className="w-[160px] sm:w-[200px] md:w-[220px] lg:w-[240px] mb-10 hero-fadein"
           />
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-fadein items-center">
+            {/* Botón 1 - Order Online: azul → blanco con borde azul */}
             <a
               href="/order-online"
-              className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 hover:opacity-90 transition`}
+              className={`${roboto.className} bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 transition-colors`}
             >
               Order Online
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
               </svg>
             </a>
+
+            {/* Bo<tón 2 - Catering: blanco → azul con texto/flecha blancos */}
             <a
               href="/catering"
-              className={`${roboto.className} h-[44px] bg-white text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 border border-[#04589C] hover:opacity-90 transition`}
+              className={`${roboto.className} h-[44px] bg-white text-[#04589C] border border-[#04589C] hover:bg-[#04589C] hover:text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               Catering
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 hidden sm:block">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#04589C" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
               </svg>
             </a>
           </div>
@@ -86,15 +89,15 @@ export default function Home() {
               Where Great Food And Community Come Together
             </p>
             <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] md:leading-[24px] lg:leading-[26px] max-w-[720px] font-normal text-[#525252]">
-              At Kafenio, we bring the heart of a Greek diner into today's rhythm — bright, welcoming, and full of flavor. From all-day breakfast to fresh salads and gyros, every plate is made with care and a touch of Mediterranean sunshine. Come for the food, stay for the vibe.
+              At Kafenio, we bring the heart of a Greek diner into today's rhythm, bright, welcoming, and full of flavor. From all-day breakfast to fresh salads and gyros, every plate is made with care and a touch of Mediterranean sunshine. Come for the food, stay for the vibe.
             </p>
             <a
               href="/about-us"
-              className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] mt-2 justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-2 justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               About Us
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
               </svg>
             </a>
           </div>
@@ -210,11 +213,11 @@ export default function Home() {
             </div>
             <a
               href="/menu"
-              className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               Full Menu
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
               </svg>
             </a>
           </div>
@@ -245,11 +248,11 @@ export default function Home() {
               </p>
               <a
                 href="/catering"
-                className={`${roboto.className} h-[44px] max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+                className={`${roboto.className} max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
               >
                 Book Your Catering
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
                 </svg>
               </a>
             </div>
@@ -288,16 +291,16 @@ export default function Home() {
           <p className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] leading-[1.2] lg:leading-[37px] font-bold font-kautiva text-white mt-2">
             What's Going On At Kafenio
           </p>
-          <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] md:leading-[24px] lg:leading-[26px] text-white max-w-[680px] mt-3">
-            Stay tuned for local happenings, seasonal specials, and neighborhood events — because good food tastes even better when shared.
+          <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] md:leading-[24px] lg:leading-[26px] text-white max-w-[600px] mt-3">
+            Stay tuned for local happenings, seasonal specials, and neighborhood events, because good food tastes even better when shared.
           </p>
           <a
             href="/happenings"
-            className={`${roboto.className} h-[44px] mt-[24px] lg:mt-[30px] max-w-[260px] h-[42px] bg-[#04589C] text-white px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+            className={`${roboto.className} mt-[24px] lg:mt-[30px] max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
           >
             See What's New
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-              <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+              <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
             </svg>
           </a>
           <HappeningsCards />
@@ -322,7 +325,7 @@ export default function Home() {
           <p className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold leading-[1.2] lg:leading-[37px] font-kautiva text-[#85431a] mt-2">
             Quick, Easy, And Always Delicious.
           </p>
-          <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] md:leading-[24px] lg:leading-[26px] text-[#525252] max-w-[720px] mt-3">
+          <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] md:leading-[24px] lg:leading-[26px] text-[#525252] max-w-[600px] mt-3">
             Skip the wait and get your Kafenio fix right at home. Order your go-to breakfast wrap, a fresh salad, or your favorite coffee, all ready for pickup or delivery.
           </p>
           <p className="text-[16px] lg:text-[18px] mt-[20px] font-bold font-kautiva leading-[100%] text-[#221c01] max-w-[720px]">
@@ -331,7 +334,8 @@ export default function Home() {
           <a
             href="https://order.toasttab.com/online/kafenio-avondale-2700-e-college-ave"
             target="_blank"
-            className={`${roboto.className} mt-[24px] lg:mt-[30px] w-full max-w-[200px] md:max-w-[236px] h-[64px] md:h-[80px] bg-[#04589C] text-white px-[24px] md:px-[40px] py-[16px] md:py-[20px] justify-center rounded-[16px] font-semibold text-[20px] leading-[20px] flex items-center gap-2 hover:opacity-90 transition`}
+            rel="noopener noreferrer"
+            className={`${roboto.className} mt-[24px] lg:mt-[30px] w-full max-w-[200px] md:max-w-[236px] h-[64px] md:h-[80px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[24px] md:px-[40px] py-[16px] md:py-[20px] justify-center rounded-[16px] font-semibold text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="200" height="54" viewBox="0 0 200 54" fill="none" className="w-[140px] md:w-[180px] lg:w-[200px] h-auto">
               <path d="M77.5564 39.5611C73.5561 39.5611 71.3972 37.5383 71.3972 33.7527V22.667H70.0061C69.3381 22.6558 68.702 22.3852 68.2381 21.9146C67.7741 21.444 67.5203 20.8122 67.5327 20.1583C67.5639 18.8414 68.6604 17.7882 70.0061 17.7824H71.3972V14.4826C71.5139 13.0116 72.7674 11.8762 74.2748 11.8762C75.7822 11.8762 77.0357 13.0116 77.1524 14.4826V17.7824H79.3978C80.7428 17.8272 81.8094 18.9074 81.8094 20.2247C81.8094 21.542 80.7428 22.6222 79.3978 22.667H77.1524V32.2582C77.1524 33.9306 78.2318 34.5889 79.1294 34.5889H79.6229C81.2421 34.5889 82.1425 35.6455 82.1425 37.01C82.1425 38.3745 81.2882 39.5611 77.5564 39.5611Z" fill="currentcolor" />
@@ -394,7 +398,7 @@ export default function Home() {
       <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center flex justify-center px-4 md:px-6">
         <FadeIn className="w-full max-w-[1100px]">
           <div
-            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-6 md:p-10 lg:p-[60px]"
+            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
           >
             <div className="flex flex-col gap-3 lg:gap-4 w-full lg:min-w-[320px] lg:max-w-[400px] items-center lg:items-start text-center lg:text-left">
               <img src="/assets/icon_find.svg" alt="icon" className="w-[32px] md:w-[36px] lg:w-[38px] h-auto" />
@@ -417,11 +421,11 @@ export default function Home() {
                 href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${roboto.className} h-[44px] bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
+                className={`${roboto.className} mt-2 w-fit h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
               >
                 Open In Map
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
-                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
+                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
                 </svg>
               </a>
             </div>

@@ -15,24 +15,16 @@ const specials = [
     {
         image: "/assets/happening-img1.webp",
         title: "BEER & WINE FIESTA",
-        description: (
-            <>
-                $4 Beer and Wine Special<br />
-                Wednesday & Sunday | All day
-            </>
-        ),
+        schedule: <>Wednesday &amp; Sunday | All days</>,
+        description: <>$4 Beer and Wine Special</>,
     },
     {
         image: "/assets/happening-img2.webp",
         title: "LUNCH SPECIAL",
+        schedule: <>Monday to Friday<br />11:00 AM – 3:00 PM</>,
         description: (
             <>
-                Monday to Friday<br />
-                11:00 AM – 3:00 PM<br />
-                Includes:<br />
-                Choice of Wrap<br />
-                Side<br />
-                Drink<br />
+                Includes: Choice of Wrap, Side and Drink<br />
                 <span className="font-bold">$13.50</span>
             </>
         ),
@@ -40,10 +32,9 @@ const specials = [
     {
         image: "/assets/happening-img3.webp",
         title: "BREAKFAST SPECIAL",
+        schedule: <>Monday to Friday<br />9:00 AM – 2:00 PM</>,
         description: (
             <>
-                Monday to Friday<br />
-                9:00 AM – 2:00 PM<br />
                 <span className="font-bold">Free Coffee, Iced Coffee or Tea</span><br />
                 With the purchase of any breakfast sandwich or breakfast main
             </>
@@ -111,7 +102,7 @@ export default function Happenings() {
                         OUR SPECIALS
                     </h3>
                     <div className="flex flex-col gap-6 max-w-[1100px] w-full">
-                        {specials.map(({ image, title, description }) => (
+                        {specials.map(({ image, title, schedule, description }) => (
                             <div
                                 key={title}
                                 className="group relative flex flex-col md:flex-row items-stretch md:min-h-[300px]"
@@ -128,6 +119,9 @@ export default function Happenings() {
                                     <h4 className="text-[24px] md:text-[26px] lg:text-[28px] font-kautiva font-bold text-black leading-tight">
                                         {title}
                                     </h4>
+                                    <div className="min-h-[2.8em] flex items-center justify-center text-[14px] md:text-[15px] leading-[140%] text-[#04589C] font-semibold">
+                                        <p>{schedule}</p>
+                                    </div>
                                     <img src="/assets/icono_happening3.svg" alt="" className="w-[36px] md:w-[40px]" />
                                     <p className="text-[14px] md:text-[15px] leading-[22px] md:leading-[24px] text-[#525252]">
                                         {description}

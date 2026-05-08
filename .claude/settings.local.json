@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npx next *)",
       "Bash(npm install *)",
-      "WebFetch(domain:www.kafeniogreekdiner.com)"
+      "WebFetch(domain:www.kafeniogreekdiner.com)",
+      "PowerShell(ls -Path \"c:\\\\Users\\\\vin_z\\\\Desktop\\\\Vincenzo\\\\practica\" | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"Directory\"}else{\"File\"}}})",
+      "PowerShell(tree -L 2 \"c:\\\\Users\\\\vin_z\\\\Desktop\\\\Vincenzo\\\\practica\" -Force 2>$null)",
+      "PowerShell(head -100)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\vin_z\\\\Desktop\\\\Vincenzo\\\\practica\\\\src\\\\app\" -Recurse | Where-Object {$_.PSIsContainer} | Select-Object FullName)"
     ]
   }
 }

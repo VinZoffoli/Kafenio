@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.kafeniogreekdiner.com"),
@@ -44,6 +45,7 @@ export default function RootLayout({
                 <Header />
                 {children}
                 <Footer />
+                <ScrollToTop />
             </body>
         </html>
     );
