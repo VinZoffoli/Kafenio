@@ -48,7 +48,7 @@ export default function Home() {
             {/* Botón 1 - Order Online: azul → blanco con borde azul */}
             <a
               href="/order-online"
-              className={`${roboto.className} bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 transition-colors`}
+              className={`${roboto.className} bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 transition-colors`}
             >
               Order Online
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -59,7 +59,7 @@ export default function Home() {
             {/* Bo<tón 2 - Catering: blanco → azul con texto/flecha blancos */}
             <a
               href="/catering"
-              className={`${roboto.className} h-[44px] bg-white text-[#04589C] border border-[#04589C] hover:bg-[#04589C] hover:text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+              className={`${roboto.className} h-[44px] bg-white text-[#04589C] border border-[#04589C] hover:bg-[#04589C] hover:text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               Catering
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 hidden sm:block">
@@ -93,7 +93,7 @@ export default function Home() {
             </p>
             <a
               href="/about-us"
-              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-2 justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-2 justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               About Us
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -111,7 +111,7 @@ export default function Home() {
       />
 
       {/* TASTE THE MEDITERRANEAN */}
-      <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center">
+      <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center lg:bg-fixed">
         <FadeIn>
           <div className="px-6 flex flex-col items-center text-center gap-4">
             <img
@@ -135,7 +135,7 @@ export default function Home() {
             >
               <Link
                 href="/menu?tab=coffee-espresso"
-                className="relative md:col-span-2 lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden group h-[240px] md:h-[300px] lg:h-[560px] cursor-pointer block"
+                className="relative md:col-span-2 lg:col-span-1 lg:row-span-2 overflow-hidden group h-[240px] md:h-[300px] lg:h-[560px] cursor-pointer block"
               >
                 <picture>
                   <source media="(min-width: 768px)" srcSet="/assets/coffee.webp" />
@@ -152,7 +152,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/menu?tab=breakfast"
-                className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+                className="relative overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
               >
                 <picture>
                   <source media="(min-width: 768px)" srcSet="/assets/breakfast.webp" />
@@ -167,12 +167,12 @@ export default function Home() {
               </Link>
               <Link
                 href="/menu?tab=beverages"
-                className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+                className="relative overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
               >
                 <picture>
                   <source media="(min-width: 768px)" srcSet="/assets/beverages.webp" />
                   <img
-                    src="/assets/beveragesmobile.webp"
+                    src="/assets/beveragesmobile.png"
                     alt="Beverages"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -182,7 +182,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/menu?tab=desserts"
-                className="relative rounded-2xl overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+                className="relative overflow-hidden group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
               >
                 <picture>
                   <source media="(min-width: 768px)" srcSet="/assets/desserts.webp" />
@@ -197,7 +197,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/menu?tab=lunch-dinner"
-                className="relative rounded-2xl overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
+                className="relative overflow-hidden md:col-span-2 lg:col-span-2 group h-[200px] md:h-[240px] lg:h-[270px] cursor-pointer block"
               >
                 <picture>
                   <source media="(min-width: 768px)" srcSet="/assets/lunch.webp" />
@@ -213,7 +213,7 @@ export default function Home() {
             </div>
             <a
               href="/menu"
-              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+              className={`${roboto.className} h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] mt-[30px] lg:mt-[40px] justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             >
               Full Menu
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -248,7 +248,7 @@ export default function Home() {
               </p>
               <a
                 href="/catering"
-                className={`${roboto.className} max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+                className={`${roboto.className} max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
               >
                 Book Your Catering
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -257,14 +257,14 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-col gap-3 md:gap-4 flex-1 w-full">
-              <div className="rounded-2xl overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] group">
+              <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] group">
                 <img src="/assets/catering1.webp" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
               <div className="flex gap-3 md:gap-4">
-                <div className="rounded-2xl overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
+                <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
                   <img src="/assets/catering2.webp" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <div className="rounded-2xl overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
+                <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
                   <img src="/assets/catering3.webp" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* HAPPENINGS */}
-      <section className="w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/happenings_fondo.webp')] bg-cover bg-center px-6">
+      <section className="w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/happenings_fondo.webp')] bg-cover bg-center lg:bg-fixed px-6">
         <FadeIn className="flex flex-col items-center text-center w-full">
           <img src="/assets/icono_happening.svg" alt="happenings icon" className="w-[50px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
           <h2 className="text-[36px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-tight font-epitaph text-white">
@@ -296,7 +296,7 @@ export default function Home() {
           </p>
           <a
             href="/happenings"
-            className={`${roboto.className} mt-[24px] lg:mt-[30px] max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+            className={`${roboto.className} mt-[24px] lg:mt-[30px] max-w-[260px] h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
           >
             See What's New
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -335,7 +335,7 @@ export default function Home() {
             href="https://order.toasttab.com/online/kafenio-avondale-2700-e-college-ave"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${roboto.className} mt-[24px] lg:mt-[30px] w-full max-w-[200px] md:max-w-[236px] h-[64px] md:h-[80px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[24px] md:px-[40px] py-[16px] md:py-[20px] justify-center rounded-[16px] font-semibold text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+            className={`${roboto.className} mt-[24px] lg:mt-[30px] w-full max-w-[200px] md:max-w-[236px] h-[64px] md:h-[80px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[24px] md:px-[40px] py-[16px] md:py-[20px] justify-center rounded-none font-semibold text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="200" height="54" viewBox="0 0 200 54" fill="none" className="w-[140px] md:w-[180px] lg:w-[200px] h-auto">
               <path d="M77.5564 39.5611C73.5561 39.5611 71.3972 37.5383 71.3972 33.7527V22.667H70.0061C69.3381 22.6558 68.702 22.3852 68.2381 21.9146C67.7741 21.444 67.5203 20.8122 67.5327 20.1583C67.5639 18.8414 68.6604 17.7882 70.0061 17.7824H71.3972V14.4826C71.5139 13.0116 72.7674 11.8762 74.2748 11.8762C75.7822 11.8762 77.0357 13.0116 77.1524 14.4826V17.7824H79.3978C80.7428 17.8272 81.8094 18.9074 81.8094 20.2247C81.8094 21.542 80.7428 22.6222 79.3978 22.667H77.1524V32.2582C77.1524 33.9306 78.2318 34.5889 79.1294 34.5889H79.6229C81.2421 34.5889 82.1425 35.6455 82.1425 37.01C82.1425 38.3745 81.2882 39.5611 77.5564 39.5611Z" fill="currentcolor" />
@@ -370,8 +370,8 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-[36px] lg:mt-[48px] max-w-[1100px] w-full">
-            <a href="/join-the-club" className="flex-1 bg-white rounded-2xl p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 hover:opacity-80 transition shadow-sm">
-              <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-xl bg-[#F5E8DC] flex items-center justify-center">
+            <a href="/join-the-club" className="flex-1 bg-white p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 hover:opacity-80 transition shadow-sm">
+              <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-none bg-[#F5E8DC] flex items-center justify-center">
                 <img src="/assets/icon_more1.svg" alt="Join the Club" className="w-[56px] md:w-[68px] h-auto" />
               </div>
               <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Join the Club</h3>
@@ -380,8 +380,8 @@ export default function Home() {
                 Sign up, earn points, and score tasty rewards every time you visit.
               </p>
             </a>
-            <a href="/gift-card" className="flex-1 bg-white rounded-2xl p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 hover:opacity-80 transition shadow-sm">
-              <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-xl bg-[#F5E8DC] flex items-center justify-center">
+            <a href="/gift-card" className="flex-1 bg-white p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 hover:opacity-80 transition shadow-sm">
+              <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-none bg-[#F5E8DC] flex items-center justify-center">
                 <img src="/assets/icon_more2.svg" alt="Share the Flavor" className="w-[56px] md:w-[68px] h-auto" />
               </div>
               <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Share the Flavor</h3>
@@ -421,7 +421,7 @@ export default function Home() {
                 href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${roboto.className} mt-2 w-fit h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+                className={`${roboto.className} mt-2 w-fit h-[44px] bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
               >
                 Open In Map
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -429,7 +429,7 @@ export default function Home() {
                 </svg>
               </a>
             </div>
-            <div className="flex-1 w-full rounded-2xl overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]">
+            <div className="flex-1 w-full overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.4419279243434!2d-84.27833129999999!3d33.775084299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f507f2e441c751%3A0xf9b29f3014538356!2sKafenio%20Avondale!5e0!3m2!1ses-419!2scr!4v1776889049384!5m2!1ses-419!2scr"
                 width="100%"

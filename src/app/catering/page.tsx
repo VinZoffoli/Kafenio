@@ -99,7 +99,7 @@ interface MenuCardProps {
 
 function MenuCard({ title, price, description }: MenuCardProps) {
     return (
-        <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 flex flex-col items-center text-center gap-3">
+        <div className="bg-white shadow-md p-6 md:p-8 flex flex-col items-center text-center gap-3">
             <h3 className="text-[28px] lg:text-[28px] font-epitaph text-[#022542] leading-[1.1]">{title}</h3>
             {price && (
                 <p className="text-[16px] md:text-[16px] font-semibold text-[#525252]">{price}</p>
@@ -138,7 +138,7 @@ export default function Catering() {
             </section>
 
             {/* INTRO SECTION */}
-            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center px-6 flex flex-col items-center text-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center lg:bg-fixed px-6 flex flex-col items-center text-center">
                 <FadeIn className="flex flex-col items-center text-center w-full">
                     <img src="/assets/icono_catering.svg" alt="icon" className="w-[52px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
                     <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
@@ -153,7 +153,7 @@ export default function Catering() {
                     </p>
                     <a
                         href="mailto:catering@kafeniogreekdiner.com"
-                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
+                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
                     >
                         Request Catering
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

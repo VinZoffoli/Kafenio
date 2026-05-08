@@ -51,6 +51,7 @@ export default function JoinTheClub() {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundAttachment: 'fixed',
                 }}
             >
                 <FadeIn className="flex flex-col items-center text-center w-full">
@@ -74,7 +75,7 @@ export default function JoinTheClub() {
                         href="https://www.toasttab.com/kafenio-avondale-2700-e-college-ave/rewardsSignup"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
+                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
                     >
                         Join The Club
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -82,7 +83,7 @@ export default function JoinTheClub() {
                         </svg>
                     </a>
                     <div className="flex flex-col gap-4 max-w-[1100px] w-full mt-8 md:mt-12">
-                        <div className="rounded-2xl overflow-hidden h-[200px] md:h-[320px] lg:h-[400px] group">
+                        <div className="overflow-hidden h-[200px] md:h-[320px] lg:h-[400px] group">
                             <img
                                 src="/assets/jointheclub1.webp"
                                 alt="Kafenio exterior"
@@ -90,14 +91,14 @@ export default function JoinTheClub() {
                             />
                         </div>
                         <div className="flex flex-row gap-4">
-                            <div className="rounded-2xl overflow-hidden h-[150px] md:h-[320px] lg:h-[400px] flex-1 group">
+                            <div className="overflow-hidden h-[150px] md:h-[320px] lg:h-[400px] flex-1 group">
                                 <img
                                     src="/assets/jointheclub2.webp"
                                     alt="Kafenio interior"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
-                            <div className="rounded-2xl overflow-hidden h-[150px] md:h-[320px] lg:h-[400px] flex-1 group">
+                            <div className="overflow-hidden h-[150px] md:h-[320px] lg:h-[400px] flex-1 group">
                                 <img
                                     src="/assets/jointheclub3.webp"
                                     alt="Kafenio guests"

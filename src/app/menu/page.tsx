@@ -213,7 +213,7 @@ function MenuItemCard({ item }: MenuItemCardProps) {
     const hasImage = item.image && item.image !== "/assets/logo_hero.svg";
 
     return (
-        <div className="bg-white rounded-2xl shadow-md py-6 md:py-8 px-4  flex flex-col items-center justify-center text-center gap-4">
+        <div className="bg-white shadow-md py-6 md:py-8 px-4  flex flex-col items-center justify-center text-center gap-4">
             {hasImage && (
                 <div className="w-full aspect-square flex items-center justify-center">
                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />

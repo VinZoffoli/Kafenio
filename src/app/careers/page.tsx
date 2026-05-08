@@ -161,6 +161,7 @@ export default function Careers() {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundAttachment: 'fixed',
                 }}
             >
                 <FadeIn className="flex flex-col items-center text-center w-full">
@@ -176,7 +177,7 @@ export default function Careers() {
                         Good Vibes, Great Food, And A Team That Feels Like Family.
                     </p>
 
-                    <div className="bg-white rounded-2xl shadow-md mt-8 md:mt-10 w-full max-w-[610px] px-6 md:px-8 py-8 md:py-10 text-left">
+                    <div className="bg-white shadow-md mt-8 md:mt-10 w-full max-w-[610px] px-6 md:px-8 py-8 md:py-10 text-left">
                         {isSubmitSuccessful ? (
                             <div className="flex flex-col items-center text-center gap-4 py-8">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">

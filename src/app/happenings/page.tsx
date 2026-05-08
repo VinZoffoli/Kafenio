@@ -76,6 +76,7 @@ export default function Happenings() {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundAttachment: 'fixed',
                 }}
             >
                 <FadeIn className="flex flex-col items-center text-center w-full">
@@ -107,8 +108,8 @@ export default function Happenings() {
                                 key={title}
                                 className="group relative flex flex-col md:flex-row items-stretch md:min-h-[300px]"
                             >
-                                <div className="absolute inset-0 bg-white rounded-2xl shadow-md" />
-                                <div className="relative z-10 flex-shrink-0 overflow-hidden w-full md:w-[47%] rounded-2xl md:rounded-2xl h-[220px] md:h-auto md:min-h-[300px]">
+                                <div className="absolute inset-0 bg-white shadow-md" />
+                                <div className="relative z-10 flex-shrink-0 overflow-hidden w-full md:w-[47%] h-[220px] md:h-auto md:min-h-[300px]">
                                     <img
                                         src={image}
                                         alt={title}

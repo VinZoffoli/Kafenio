@@ -43,7 +43,7 @@ export default function About() {
             </section>
 
             {/* ABOUT BRAND */}
-            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/about-fondo.webp')] bg-cover bg-center px-6 lg:px-0">
+            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/about-fondo.webp')] bg-cover bg-center lg:bg-fixed px-6 lg:px-0">
                 <FadeIn>
                     <div className="flex flex-col items-center mb-[30px] md:mb-[60px]">
                         <img src="/assets/icono-aboutbrand.svg" alt="icon" className="w-[26px] md:w-[31px] h-auto mt-2" />
@@ -65,7 +65,7 @@ export default function About() {
                             </p>
                             <a
                                 href="/visit"
-                                className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] md:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition`}
+                                className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] md:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition`}
                             >
                                 Visit Us Today
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -74,14 +74,14 @@ export default function About() {
                             </a>
                         </div>
                         <div className="flex flex-col gap-4 w-full lg:flex-1 lg:h-[512px]">
-                            <div className="rounded-2xl overflow-hidden h-[200px] md:h-[280px] lg:h-full lg:w-[496px] group">
+                            <div className="overflow-hidden h-[200px] md:h-[280px] lg:h-full lg:w-[496px] group">
                                 <img src="/assets/about1.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>
                             <div className="flex flex-row gap-4">
-                                <div className="rounded-2xl overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
+                                <div className="overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
                                     <img src="/assets/about2.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 </div>
-                                <div className="rounded-2xl overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
+                                <div className="overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
                                     <img src="/assets/about3.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ export default function About() {
                         href="https://www.google.com/maps"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] md:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6`}
+                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] md:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6`}
                     >
                         See All Reviews
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -126,7 +126,7 @@ export default function About() {
                             { name: "Noriko I", review: "I love coming here because the food is great (who doesn't like fresh Greek food?), the decor is awesome (you get to see a glimpse into the family history), and the service is friendly. As a matter of fact, the people who work here are not miserable and it shows in the food and service. Oh yeah, they also have alcohol, so you can have a beer with your gyro." },
                             { name: "Craig Prater", review: "Came to try after driving past so many times. I stopped in and ordered the standard gyro wrap, which came with a side. I chose the rice pilaf. The portion size was great for the price. FYI, they also do breakfast if youre interested. Service was very hospitable, and the dining area looked cozy. Parking is on the street adjacent, but spots might be minimal. I'll be back for more." },
                         ].map(({ name, review }) => (
-                            <div key={name} className="break-inside-avoid mb-4 md:mb-6 bg-[#f5f5f5] rounded-2xl p-5 md:p-6 flex flex-col items-center text-center gap-3 shadow-md">
+                            <div key={name} className="break-inside-avoid mb-4 md:mb-6 bg-[#f5f5f5] p-5 md:p-6 flex flex-col items-center text-center gap-3 shadow-md">
                                 <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
                                         <svg key={i} width="20" height="20" viewBox="0 0 20 20" fill="none">

@@ -179,7 +179,7 @@ export default function Header() {
                     {/* Right side DESKTOP */}
                     <div className="hidden lg:flex items-center gap-4">
                         <Link href="/order-online">
-                            <button className="cursor-pointer bg-[#04589c] text-white px-9 py-2 rounded-lg font-semibold text-[20px] leading-[24px] border border-transparent hover:bg-white hover:text-[#04589c] hover:border-[#04589c] transition">
+                            <button className="cursor-pointer bg-[#04589c] text-white px-9 py-2 rounded-none font-semibold text-[20px] leading-[24px] border border-transparent hover:bg-white hover:text-[#04589c] hover:border-[#04589c] transition">
                                 Order Online
                             </button>
                         </Link>
@@ -207,7 +207,7 @@ export default function Header() {
                     {/* Right side MOBILE/TABLET */}
                     <div className="lg:hidden flex items-center gap-2">
                         <Link href="/order-online">
-                            <button className="cursor-pointer bg-[#04589c] text-white px-4 h-[44px] rounded-lg font-semibold text-[14px] sm:text-[16px] leading-[20px] hover:opacity-90 transition whitespace-nowrap">
+                            <button className="cursor-pointer bg-[#04589c] text-white px-4 h-[44px] rounded-none font-semibold text-[14px] sm:text-[16px] leading-[20px] hover:opacity-90 transition whitespace-nowrap">
                                 Order Online
                             </button>
                         </Link>
@@ -215,7 +215,7 @@ export default function Header() {
                         <button
                             onClick={() => setMenuOpen(true)}
                             aria-label="Open menu"
-                            className="flex items-center justify-center w-[44px] h-[44px] rounded-lg border border-[#04589c]"
+                            className="flex items-center justify-center w-[44px] h-[44px] rounded-none border border-[#04589c]"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +248,7 @@ export default function Header() {
                     <button
                         onClick={() => setMenuOpen(false)}
                         aria-label="Close menu"
-                        className="flex items-center justify-center w-[40px] h-[40px] rounded-lg bg-[#04589c] hover:opacity-90 transition"
+                        className="flex items-center justify-center w-[40px] h-[40px] rounded-none bg-[#04589c] hover:opacity-90 transition"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

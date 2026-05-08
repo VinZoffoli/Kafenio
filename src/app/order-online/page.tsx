@@ -44,7 +44,7 @@ export default function OrderOnline() {
             </section>
 
             {/* SECCIÓN ORDER */}
-            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center px-6 flex flex-col items-center text-center">
+            <section className="w-full py-[50px] md:py-[80px] bg-[url('/assets/PreMenu.webp')] bg-cover bg-center lg:bg-fixed px-6 flex flex-col items-center text-center">
                 <FadeIn className="flex flex-col items-center text-center w-full">
                     <img src="/assets/icono_seccion_order.svg" alt="icon" className="w-[52px] md:w-[60px] lg:w-[68px] h-auto mb-4" />
                     <h2 className="text-[30px] md:text-[40px] lg:text-[48px] leading-tight font-epitaph text-[#04589C]">
@@ -63,7 +63,7 @@ export default function OrderOnline() {
                         href="https://order.toasttab.com/online/kafenio-avondale-2700-e-college-ave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${roboto.className} bg-[#04589C] text-white w-[235px] h-[80px] md:w-[200px] md:h-[72px] lg:w-[235px] lg:h-[80px] px-[24px] md:px-[32px] lg:px-[40px] py-[16px] md:py-[18px] lg:py-[20px] rounded-xl font-semibold text-[20px] leading-[20px] flex items-center justify-center mt-4 hover:opacity-90 transition`}
+                        className={`${roboto.className} bg-[#04589C] text-white w-[235px] h-[80px] md:w-[200px] md:h-[72px] lg:w-[235px] lg:h-[80px] px-[24px] md:px-[32px] lg:px-[40px] py-[16px] md:py-[18px] lg:py-[20px] rounded-none font-semibold text-[20px] leading-[20px] flex items-center justify-center mt-4 hover:opacity-90 transition`}
                     >
                         <svg
                             width="196"

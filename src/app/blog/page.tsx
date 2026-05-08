@@ -91,7 +91,7 @@ function BlogCard({ post }: BlogCardProps) {
     return (
         <a
             href={post.href}
-            className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col group hover:shadow-lg transition-shadow"
+            className="bg-white overflow-hidden shadow-md flex flex-col group hover:shadow-lg transition-shadow"
         >
             {/* Imagen con badge superpuesto */}
             <div className="relative w-full h-[180px] md:h-[220px] overflow-hidden">

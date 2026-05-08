@@ -31,7 +31,7 @@ function Card({ image, title, schedule, content }: {
     content: React.ReactNode;
 }) {
     return (
-        <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
+        <div className="bg-white overflow-hidden flex flex-col h-full">
             <div className="h-[220px] md:h-[240px] lg:h-[270px] overflow-hidden group">
                 <img
                     src={image}

@@ -129,7 +129,7 @@ export default function ContactUs() {
                         or your next visit, we're always happy to connect.
                     </p>
 
-                    <div className="bg-white rounded-2xl shadow-md mt-8 md:mt-10 w-full max-w-[610px] px-6 md:px-8 py-8 md:py-10 text-left">
+                    <div className="bg-white shadow-md mt-8 md:mt-10 w-full max-w-[610px] px-6 md:px-8 py-8 md:py-10 text-left">
                         {isSubmitSuccessful ? (
                             <div className="flex flex-col items-center text-center gap-4 py-8">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -205,7 +205,7 @@ export default function ContactUs() {
             </section>
 
             {/* FIND US */}
-            <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center flex justify-center px-4 md:px-6">
+            <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center lg:bg-fixed flex justify-center px-4 md:px-6">
                 <FadeIn className="w-full max-w-[1100px]">
                     <div
                         className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
@@ -231,7 +231,7 @@ export default function ContactUs() {
                                 href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
+                                className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
                             >
                                 Open In Map
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -239,7 +239,7 @@ export default function ContactUs() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="flex-1 w-full rounded-2xl overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]">
+                        <div className="flex-1 w-full overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.4419279243434!2d-84.27833129999999!3d33.775084299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f507f2e441c751%3A0xf9b29f3014538356!2sKafenio%20Avondale!5e0!3m2!1ses-419!2scr!4v1776889049384!5m2!1ses-419!2scr"
                                 width="100%"

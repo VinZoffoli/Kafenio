@@ -51,6 +51,7 @@ export default function GiftCard() {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundAttachment: 'fixed',
                 }}
             >
                 <FadeIn className="flex flex-col items-center text-center w-full">
@@ -74,7 +75,7 @@ export default function GiftCard() {
                         href="https://order.toasttab.com/egiftcards/kafenio-avondale-2700-e-college-ave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-lg font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
+                        className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[14px] md:text-[16px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-6 md:mt-8`}
                     >
                         Buy A Gift Card
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
