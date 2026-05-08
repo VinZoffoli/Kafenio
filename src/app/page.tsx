@@ -392,26 +392,26 @@ export default function Home() {
           </AnimateIn>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-[36px] lg:mt-[48px] max-w-[1100px] w-full">
-            <AnimateIn direction="up" delay={0.1} className="flex-1">
+            <AnimateIn direction="up" delay={0.1} className="flex-1 h-full">
               <a href="/join-the-club" className="group flex-1 bg-white p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 block">
                 <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-none bg-[#F5E8DC] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                   <img src="/assets/icon_more1.svg" alt="Join the Club" className="w-[56px] md:w-[68px] h-auto" />
                 </div>
                 <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Join the Club</h3>
                 <img src="/assets/divider_brown.svg" alt="" className="w-[40px]" />
-                <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
+                <p className="lg:max-w-[400px] text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
                   Sign up, earn points, and score tasty rewards every time you visit.
                 </p>
               </a>
             </AnimateIn>
-            <AnimateIn direction="up" delay={0.2} className="flex-1">
+            <AnimateIn direction="up" delay={0.2} className="flex-1 h-full">
               <a href="/gift-card" className="group flex-1 bg-white p-6 md:p-7 lg:p-8 flex flex-col items-center text-center gap-3 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 block">
                 <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-none bg-[#F5E8DC] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                   <img src="/assets/icon_more2.svg" alt="Share the Flavor" className="w-[56px] md:w-[68px] h-auto" />
                 </div>
                 <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Share the Flavor</h3>
                 <img src="/assets/divider_brown.svg" alt="" className="w-[40px]" />
-                <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
+                <p className=" lg:max-w-[400px] text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
                   Give the gift of good food, send a Kafenio Gift Card to someone you love.
                 </p>
               </a>
