@@ -85,7 +85,7 @@ export default function GiftCard() {
                     <div className="relative mt-8 md:mt-12 w-full max-w-[584px]">
                         <img
                             src="/assets/giftcard_final.webp"
-                            alt=""
+                            alt="Kafenio Greek Diner gift card"
                             className="w-full h-auto"
                         />
                     </div>

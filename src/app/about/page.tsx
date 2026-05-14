@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import FadeIn from "@/app/components/FadeIn";
+import ReviewsCarousel from "@/app/components/ReviewsCarousel";
 
 export const metadata: Metadata = {
     title: "About Kafenio Greek Diner in Decatur GA",
@@ -16,6 +17,18 @@ const roboto = Roboto({
     subsets: ["latin"],
     weight: ["600"],
 });
+
+const reviews = [
+    { name: "Natalia Santana-Pollard", review: "Honestly some of the best Greek food I've had in Atlanta and I've tried a lot of places. The food was well seasoned and the portions were generous. I would've loved to try their desserts but I was so full I couldn't take another bite. Highly recommend going after lunch rush does down when it's calm and emptier." },
+    { name: "Ahmad Walker", review: "My first time actually getting food from here to go. Nice restaurant and ambience. They have dessert that will make your mouth water. The gyro is huge and delicious. I got a gyro with fries for dinner and a gyro platter with the salad for lunch at work the following day." },
+    { name: "Dee", review: "A weekday evening discovery that shall remain on the favorites list forever. Amazing Greek food, fresh flavors and no nonsense service. Where was I, missing this place for so long?" },
+    { name: "Alexandra Zagorski", review: "Whoa, so fresh! I came here after reading the owner's response to a disgruntled customer - and I'm so glad I did! I order the Greek salad with chicken, an extra side of tzatziki and pita, and a glass of wine, all for $25 before tip. All delicious. I'll be back!" },
+    { name: "Stella C", review: "This place have great services and have the best coffee. The food is delicious. The desserts are also tasty.\n\nUpdate: Visited recently and did I missed this so much! I relocated to the other side of town so it's a bit difficult to visit as frequently as I did in the past. As always, everything was amazing and very delicious. The staff continues to be friendly and kind. You can visit with family and friends. The coffee is GREAT!" },
+    { name: "Hung Do", review: "Good for a quick bite of Greek food. We ordered 2 salads: Greek salad with chicken, Village salad with gyro meat. We also ordered a gyro platter with rice & side salad, & a chicken platter with potatoes & side salads. All the salads were fresh & delicious with light dressings. The potatoes were a favorite. The chicken was average. The gyro meat was good, thick cuts. The Tzatziki sauce was very good, just need more of it. Love the Arden's Garden juices. Located in Avondale Estates area." },
+    { name: "Kelsey Neal", review: "The staff are so friendly and patient. I have many dietary restrictions and I was carefully walked through my choices before getting the recommendation to try the Athena sandwich on pita. The plate definitely made me feel cared for like they had a Greek grandma in the back adding sliced oranges to all the plates to make sure it's properly balanced. I also love the Greek god themed decor and mural." },
+    { name: "Noriko I", review: "I love coming here because the food is great (who doesn't like fresh Greek food?), the decor is awesome (you get to see a glimpse into the family history), and the service is friendly. As a matter of fact, the people who work here are not miserable and it shows in the food and service. Oh yeah, they also have alcohol, so you can have a beer with your gyro." },
+    { name: "Craig Prater", review: "Came to try after driving past so many times. I stopped in and ordered the standard gyro wrap, which came with a side. I chose the rice pilaf. The portion size was great for the price. FYI, they also do breakfast if youre interested. Service was very hospitable, and the dining area looked cozy. Parking is on the street adjacent, but spots might be minimal. I'll be back for more." },
+];
 
 export default function About() {
     return (
@@ -48,7 +61,7 @@ export default function About() {
                     <div className="flex flex-col items-center mb-[30px] md:mb-[60px]">
                         <img src="/assets/icono-aboutbrand.svg" alt="icon" className="w-[26px] md:w-[31px] h-auto mt-2" />
                     </div>
-                    <div className="max-w-[1040px] mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-[80px] lg:h-[512px]">
+                    <div className="max-w-[1100px] mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-[80px] lg:h-[512px]">
                         <div className="flex flex-col gap-4 md:gap-5 max-w-[500px] items-center lg:items-start text-center lg:text-left">
                             <h2 className="text-[36px] md:text-[42px] lg:text-[48px] leading-tight font-epitaph text-[#05589c]">
                                 A MODERN SPIN ON A GREEK CLASSIC
@@ -57,7 +70,7 @@ export default function About() {
                                 Where Good Food, Good Coffee, And Good Company Come Together.
                             </p>
                             <p className="text-[16px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#3d3d3d]">
-                                Kafenio Greek Diner brings the heart of the Mediterranean to Avondale Estates, a bright, friendly spot where everyone feels welcome. Inspired by the traditional Greek kafenia — the cozy village cafés where people gathered to eat, talk, and unwind, Kafenio keeps that same spirit alive with a modern twist.
+                                Kafenio Greek Diner brings the heart of the Mediterranean to Avondale Estates, a bright, friendly spot where everyone feels welcome. Inspired by the traditional Greek kafenia, the cozy village cafés where people gathered to eat, talk, and unwind, Kafenio keeps that same spirit alive with a modern twist.
                             </p>
                             <p className="text-[16px] md:text-[16px] leading-[24px] md:leading-[26px] text-[#3d3d3d]">
                                 Since opening in 2018, we've become a neighborhood favorite for our all-day breakfast, fresh salads, flavorful wraps, and a full coffee and espresso bar that keeps the energy flowing.<br />
@@ -74,15 +87,15 @@ export default function About() {
                             </a>
                         </div>
                         <div className="flex flex-col gap-4 w-full lg:flex-1 lg:h-[512px]">
-                            <div className="overflow-hidden h-[200px] md:h-[280px] lg:h-full lg:w-[496px] group">
-                                <img src="/assets/about1.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="overflow-hidden h-[200px] md:h-[280px] lg:flex-1 group">
+                                <img src="/assets/about1.webp" alt="Inside Kafenio Greek Diner in Avondale Estates, Decatur GA" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <div className="flex flex-row gap-4">
+                            <div className="flex flex-row gap-4 lg:h-[180px]">
                                 <div className="overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
-                                    <img src="/assets/about2.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <img src="/assets/about2.webp" alt="Fresh Greek food and coffee at Kafenio diner" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 </div>
                                 <div className="overflow-hidden h-[150px] md:h-[200px] lg:h-full flex-1 group">
-                                    <img src="/assets/about3.webp" alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <img src="/assets/about3.webp" alt="Kafenio Greek Diner dining area and atmosphere" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 </div>
                             </div>
                         </div>
@@ -114,29 +127,37 @@ export default function About() {
                             <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
                         </svg>
                     </a>
-                    <div className="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-6 mt-8 md:mt-[48px] max-w-[1040px] w-full">
-                        {[
-                            { name: "Natalia Santana-Pollard", review: "Honestly some of the best Greek food I've had in Atlanta and I've tried a lot of places. The food was well seasoned and the portions were generous. I would've loved to try their desserts but I was so full I couldn't take another bite. Highly recommend going after lunch rush does down when it's calm and emptier." },
-                            { name: "Ahmad Walker", review: "My first time actually getting food from here to go. Nice restaurant and ambience. They have dessert that will make your mouth water. The gyro is huge and delicious. I got a gyro with fries for dinner and a gyro platter with the salad for lunch at work the following day." },
-                            { name: "Dee", review: "A weekday evening discovery that shall remain on the favorites list forever. Amazing Greek food, fresh flavors and no nonsense service. Where was I, missing this place for so long?" },
-                            { name: "Alexandra Zagorski", review: "Whoa, so fresh! I came here after reading the owner's response to a disgruntled customer - and I'm so glad I did! I order the Greek salad with chicken, an extra side of tzatziki and pita, and a glass of wine, all for $25 before tip. All delicious. I'll be back!" },
-                            { name: "Stella C", review: "This place have great services and have the best coffee. The food is delicious. The desserts are also tasty.\n\nUpdate: Visited recently and did I missed this so much! I relocated to the other side of town so it's a bit difficult to visit as frequently as I did in the past. As always, everything was amazing and very delicious. The staff continues to be friendly and kind. You can visit with family and friends. The coffee is GREAT!" },
-                            { name: "Hung Do", review: "Good for a quick bite of Greek food. We ordered 2 salads: Greek salad with chicken, Village salad with gyro meat. We also ordered a gyro platter with rice & side salad, & a chicken platter with potatoes & side salads. All the salads were fresh & delicious with light dressings. The potatoes were a favorite. The chicken was average. The gyro meat was good, thick cuts. The Tzatziki sauce was very good, just need more of it. Love the Arden's Garden juices. Located in Avondale Estates area." },
-                            { name: "Kelsey Neal", review: "The staff are so friendly and patient. I have many dietary restrictions and I was carefully walked through my choices before getting the recommendation to try the Athena sandwich on pita. The plate definitely made me feel cared for like they had a Greek grandma in the back adding sliced oranges to all the plates to make sure it's properly balanced. I also love the Greek god themed decor and mural." },
-                            { name: "Noriko I", review: "I love coming here because the food is great (who doesn't like fresh Greek food?), the decor is awesome (you get to see a glimpse into the family history), and the service is friendly. As a matter of fact, the people who work here are not miserable and it shows in the food and service. Oh yeah, they also have alcohol, so you can have a beer with your gyro." },
-                            { name: "Craig Prater", review: "Came to try after driving past so many times. I stopped in and ordered the standard gyro wrap, which came with a side. I chose the rice pilaf. The portion size was great for the price. FYI, they also do breakfast if youre interested. Service was very hospitable, and the dining area looked cozy. Parking is on the street adjacent, but spots might be minimal. I'll be back for more." },
-                        ].map(({ name, review }) => (
-                            <div key={name} className="break-inside-avoid mb-4 md:mb-6 bg-[#f5f5f5] p-5 md:p-6 flex flex-col items-center text-center gap-3 shadow-md">
-                                <div className="flex gap-1">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M10 1L12.39 6.26L18.18 7.27L14.09 11.14L15.18 17L10 14.27L4.82 17L5.91 11.14L1.82 7.27L7.61 6.26L10 1Z" fill="#F5A623" />
-                                        </svg>
-                                    ))}
-                                </div>
-                                <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-bold font-kautiva text-[#363636]">{name}</h3>
-                                <img src="/assets/Frame2.svg" alt="" className="w-[34px] md:w-[38px]" />
-                                <p className="text-[14px] md:text-[15px] leading-[22px] md:leading-[24px] text-[#3d3d3d] whitespace-pre-line">{review}</p>
+                    {/* Mobile: carousel */}
+                    <div className="lg:hidden mt-8 w-full max-w-[600px]">
+                        <ReviewsCarousel reviews={reviews} />
+                    </div>
+
+                    {/* Desktop: 3-column grid */}
+                    <div className="hidden lg:flex flex-row gap-2 mt-[48px] max-w-[1100px] w-full">
+                        {[0, 1, 2].map(col => (
+                            <div key={col} className="flex-1 flex flex-col justify-end gap-2">
+                                {reviews.filter((_, i) => i % 3 === col).map(({ name, review }, colItemIdx) => (
+                                    <div key={name} className={`${(col === 0 || col === 2) && colItemIdx === 0 ? "flex-1" : ""} bg-[#f5f5f5] p-5 md:p-6 flex flex-col items-center text-center gap-3 shadow-md`}>
+                                        <div className="flex items-center justify-between w-full">
+                                            <div className="flex gap-1">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <svg key={i} width="18" height="18" viewBox="0 0 20 20" fill="none">
+                                                        <path d="M10 1L12.39 6.26L18.18 7.27L14.09 11.14L15.18 17L10 14.27L4.82 17L5.91 11.14L1.82 7.27L7.61 6.26L10 1Z" fill="#F5A623" />
+                                                    </svg>
+                                                ))}
+                                            </div>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
+                                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-[18px] md:text-[20px] lg:text-[22px] font-bold font-kautiva text-[#363636]">{name}</h3>
+                                        <img src="/assets/Frame2.svg" alt="" aria-hidden="true" className="w-[30px] md:w-[34px]" />
+                                        <p className="text-[14px] md:text-[15px] leading-[22px] md:leading-[24px] text-[#3d3d3d] whitespace-pre-line">{review}</p>
+                                    </div>
+                                ))}
                             </div>
                         ))}
                     </div>

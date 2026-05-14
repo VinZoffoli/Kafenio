@@ -41,7 +41,7 @@ export default function RootLayout({
             <head>
                 <link rel="stylesheet" href="https://use.typekit.net/suv6wse.css" />
             </head>
-            <body>
+            <body className="relative">
                 <Header />
                 {children}
                 <Footer />

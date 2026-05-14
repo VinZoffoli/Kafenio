@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Roboto } from "next/font/google";
+import { MapPinIcon } from "@phosphor-icons/react";
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -47,9 +48,10 @@ export default function Footer() {
                         href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#979797] hover:text-white transition-colors leading-[20px] text-[13px] lg:text-[14px]"
+                        className="flex items-start gap-1.5 text-[#979797] hover:text-white transition-colors leading-[20px] text-[13px] lg:text-[14px]"
                     >
-                        2700 E College Ave #3000, Decatur, GA 30030, United States
+                        <MapPinIcon weight="duotone" size={16} className="flex-shrink-0 mt-[2px]" />
+                        <span className="underline underline-offset-2">2700 E College Ave #3000, Decatur, GA 30030, United States</span>
                     </a>
 
                     {/* Botón */}

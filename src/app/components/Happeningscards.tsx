@@ -47,7 +47,7 @@ function Card({ image, title, schedule, content }: {
                 <div className="min-h-[2.8em] flex items-center justify-center text-[14px] lg:text-[16px] leading-[140%] text-[#04589C] font-semibold">
                     <p>{schedule}</p>
                 </div>
-                <img src="/assets/divisor.svg" alt="" className="w-[40px]" />
+                <img src="/assets/divisor.svg" alt="" aria-hidden="true" className="w-[40px]" />
                 <p className="text-[14px] lg:text-[16px] leading-[140%] text-black">
                     {content}
                 </p>

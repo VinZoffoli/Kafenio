@@ -207,16 +207,24 @@ function rowsToMenuData(
 
 interface MenuItemCardProps {
     item: MenuItem;
+    index: number;
 }
 
-function MenuItemCard({ item }: MenuItemCardProps) {
+function MenuItemCard({ item, index }: MenuItemCardProps) {
     const hasImage = item.image && item.image !== "/assets/logo_hero.svg";
+    const isPriority = index < 9;
 
     return (
         <div className="bg-white shadow-md py-6 md:py-8 px-4  flex flex-col items-center justify-center text-center gap-4">
             {hasImage && (
                 <div className="w-full aspect-square flex items-center justify-center">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-contain"
+                        loading={isPriority ? "eager" : "lazy"}
+                        fetchPriority={isPriority ? "high" : "low"}
+                    />
                 </div>
             )}
             <h4 className="text-[24px] md:text-[28px] font-epitaph text-[#022542] leading-tight uppercase">{item.name}</h4>
@@ -235,24 +243,23 @@ interface SubSectionBlockProps {
     subtitle?: string;
     footnote?: string;
     items: MenuItem[];
+    startIndex: number;
 }
 
-function SubSectionBlock({ title, subtitle, footnote, items }: SubSectionBlockProps) {
+function SubSectionBlock({ title, subtitle, footnote, items, startIndex }: SubSectionBlockProps) {
     return (
         <div className="w-full py-[40px] md:py-[60px]">
             {/* Título de subsección con icono detrás */}
             <div className="flex flex-col items-center text-center mb-[30px] md:mb-[40px] px-4">
                 {/* Wrapper relativo para superponer el icono */}
-                <div className="relative inline-flex flex-col items-center">
-                    {/* Icono detrás del título - centrado verticalmente */}
+                <div className="flex flex-col items-center gap-2">
                     <img
                         src="/assets/icontitle.svg"
                         alt=""
                         aria-hidden="true"
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[100%] w-[88px] h-auto pointer-events-none z-0"
+                        className="w-[52px] h-auto"
                     />
-                    {/* Título */}
-                    <h3 className="relative z-10 text-[34px] md:text-[38px] font-epitaph font-bold text-[#043e6f] leading-tight uppercase">
+                    <h3 className="text-[34px] md:text-[38px] font-epitaph font-bold text-[#043e6f] leading-tight uppercase">
                         {title}
                     </h3>
                 </div>
@@ -270,7 +277,7 @@ function SubSectionBlock({ title, subtitle, footnote, items }: SubSectionBlockPr
                 <div className="px-4 md:px-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                         {items.map((item, i) => (
-                            <MenuItemCard key={i} item={item} />
+                            <MenuItemCard key={i} item={item} index={startIndex + i} />
                         ))}
                     </div>
                 </div>
@@ -281,7 +288,7 @@ function SubSectionBlock({ title, subtitle, footnote, items }: SubSectionBlockPr
             {/* Footnote (texto debajo de las cards) */}
             {footnote && (
                 <div className="text-center mt-8 md:mt-10 px-4">
-                    <p className={`font-kautiva text-[19px] md:text-[24px] font-light text-[#022542] leading-[21px] whitespace-pre-line `}>
+                    <p className={`font-kautiva text-[19px] md:text-[24px] font-light text-[#022542] leading-[32px] md:leading-[38px] whitespace-pre-line`}>
                         {footnote}
                     </p>
                 </div>
@@ -296,18 +303,90 @@ interface TabSectionBlockProps {
 }
 
 function TabSectionBlock({ id, subsections }: TabSectionBlockProps) {
+    let runningIndex = 0;
     return (
         <section id={id} className="w-full scroll-mt-[180px] md:scroll-mt-[200px]">
-            {subsections.map((sub, i) => (
-                <SubSectionBlock
-                    key={i}
-                    title={sub.title}
-                    subtitle={sub.subtitle}
-                    footnote={sub.footnote}
-                    items={sub.items}
-                />
-            ))}
+            {subsections.map((sub, i) => {
+                const startIndex = runningIndex;
+                runningIndex += sub.items.length;
+                return (
+                    <SubSectionBlock
+                        key={i}
+                        title={sub.title}
+                        subtitle={sub.subtitle}
+                        footnote={sub.footnote}
+                        items={sub.items}
+                        startIndex={startIndex}
+                    />
+                );
+            })}
         </section>
+    );
+}
+
+function MenuItemCardSkeleton() {
+    return (
+        <div className="bg-white shadow-md py-6 md:py-8 px-4 flex flex-col items-center gap-4 animate-pulse">
+            <div className="w-full aspect-square bg-gray-200" />
+            <div className="h-7 w-3/4 bg-gray-200 rounded" />
+            <div className="h-4 w-full bg-gray-200 rounded" />
+            <div className="h-4 w-2/3 bg-gray-200 rounded" />
+            <div className="h-4 w-1/4 bg-gray-200 rounded" />
+        </div>
+    );
+}
+
+function MenuSkeleton() {
+    return (
+        <div className="w-full py-[40px] md:py-[60px]">
+            <div className="flex flex-col items-center mb-[30px] md:mb-[40px] px-4 gap-3 animate-pulse">
+                <div className="h-10 w-56 bg-gray-200 rounded" />
+                <div className="h-5 w-80 bg-gray-200 rounded" />
+            </div>
+            <div className="px-4 md:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    {[...Array(6)].map((_, i) => <MenuItemCardSkeleton key={i} />)}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function MenuFeedback({ type, onRetry }: { type: "error" | "timeout"; onRetry: () => void }) {
+    const isTimeout = type === "timeout";
+    return (
+        <div className="flex flex-col items-center gap-5 py-24 px-6 text-center">
+            <div className="w-16 h-16 bg-gray-100 flex items-center justify-center">
+                {isTimeout ? (
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round">
+                        <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                    </svg>
+                ) : (
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round">
+                        <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                )}
+            </div>
+            <div>
+                <h3 className="font-epitaph text-[22px] text-[#043e6f] mb-1">
+                    {isTimeout ? "TAKING TOO LONG" : "SOMETHING WENT WRONG"}
+                </h3>
+                <p className={`${roboto.className} text-[14px] text-[#9ca3af] max-w-[320px] mx-auto`}>
+                    {isTimeout
+                        ? "The menu is taking longer than expected. Check your connection and try again."
+                        : "We couldn't load the menu right now. Please try again."}
+                </p>
+            </div>
+            <button
+                onClick={onRetry}
+                className={`${roboto.className} bg-[#04589C] text-white px-6 h-[42px] font-semibold text-[14px] hover:opacity-90 transition flex items-center gap-2`}
+            >
+                Try Again
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+            </button>
+        </div>
     );
 }
 
@@ -317,10 +396,16 @@ function MenuContent() {
     const [headerHeight, setHeaderHeight] = useState(80);
     const tabsContainerRef = useRef<HTMLDivElement>(null);
     const [menuData, setMenuData] = useState<Record<string, TabSection>>(() => createEmptyMenuData());
-    const [menuError, setMenuError] = useState<string | null>(null);
+    const [status, setStatus] = useState<"loading" | "success" | "error" | "timeout">("loading");
+    const [retryCount, setRetryCount] = useState(0);
 
     useEffect(() => {
         let isMounted = true;
+        setStatus("loading");
+
+        const timeoutId = setTimeout(() => {
+            if (isMounted) setStatus("timeout");
+        }, 10000);
 
         async function loadMenu() {
             const { data: menus, error: menusError } = await supabase
@@ -332,13 +417,13 @@ function MenuContent() {
 
             if (menusError) {
                 console.error("[menu] Supabase menus error:", menusError.message, menusError.details);
-                if (isMounted) setMenuError("Menu unavailable");
+                if (isMounted) { clearTimeout(timeoutId); setStatus("error"); }
                 return;
             }
 
             const menuIds = menus?.map((menu) => menu.id) ?? [];
             if (menuIds.length === 0) {
-                if (isMounted) setMenuData(createEmptyMenuData());
+                if (isMounted) { clearTimeout(timeoutId); setMenuData(createEmptyMenuData()); setStatus("success"); }
                 return;
             }
 
@@ -350,13 +435,13 @@ function MenuContent() {
 
             if (categoriesError) {
                 console.error("[menu] Supabase categories error:", categoriesError.message, categoriesError.details);
-                if (isMounted) setMenuError("Menu unavailable");
+                if (isMounted) { clearTimeout(timeoutId); setStatus("error"); }
                 return;
             }
 
             const categoryIds = categories?.map((category) => category.id) ?? [];
             if (categoryIds.length === 0) {
-                if (isMounted) setMenuData(createEmptyMenuData());
+                if (isMounted) { clearTimeout(timeoutId); setMenuData(createEmptyMenuData()); setStatus("success"); }
                 return;
             }
 
@@ -369,31 +454,27 @@ function MenuContent() {
 
             if (itemsError) {
                 console.error("[menu] Supabase items error:", itemsError.message, itemsError.details);
-                if (isMounted) setMenuError("Menu unavailable");
+                if (isMounted) { clearTimeout(timeoutId); setStatus("error"); }
                 return;
             }
 
-            console.log("[menu] Supabase client:", supabaseClientId);
-            console.log("[menu] Supabase categories:", categories);
-            console.log("[menu] Supabase items:", items);
-
             if (isMounted) {
-                setMenuError(null);
+                clearTimeout(timeoutId);
                 setMenuData(rowsToMenuData(
                     (categories ?? []) as MenuCategoryRow[],
                     (items ?? []) as unknown as MenuItemRow[]
                 ));
+                setStatus("success");
             }
-
-
         }
 
         loadMenu();
 
         return () => {
             isMounted = false;
+            clearTimeout(timeoutId);
         };
-    }, []);
+    }, [retryCount]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -450,13 +531,7 @@ function MenuContent() {
 
     useEffect(() => {
         const tab = searchParams.get("tab");
-        if (!tab) return;
-
-        const totalSubsections = Object.values(menuData).reduce(
-            (acc, t) => acc + t.subsections.length,
-            0
-        );
-        if (totalSubsections === 0) return;
+        if (!tab || status !== "success") return;
 
         const timer = setTimeout(() => {
             const section = document.getElementById(tab);
@@ -470,7 +545,9 @@ function MenuContent() {
         }, 300);
 
         return () => clearTimeout(timer);
-    }, [searchParams, menuData]);
+    }, [searchParams, status]);
+
+    const retry = () => setRetryCount(c => c + 1);
 
     const handleTabClick = (id: string) => {
         const section = document.getElementById(id);
@@ -482,8 +559,8 @@ function MenuContent() {
     };
 
     return (
-        <main className="bg-[#f1f4f9]">
-            <section className="relative w-full h-[400px] md:h-[45vh]">
+        <main className="bg-[#eaeff3] md:bg-[#f1f4f9]">
+            <section className="relative w-full h-[200px] md:h-[45vh]">
 
                 {/* Imagen mobile */}
                 <img
@@ -524,7 +601,7 @@ function MenuContent() {
 
             {/* TABS STICKY - SEPARADO del contenedor blanco para que funcione el sticky */}
             <div
-                className="sticky z-40 transition-all duration-300 bg-[#f1f4f9]"
+                className="sticky z-40 transition-all duration-300 bg-[#eaeff3] md:bg-[#f1f4f9]"
                 style={{ top: `${headerHeight}px` }}
             >
                 <div className="max-w-[1100px] mx-auto mt-0 md:mt-[70px]">
@@ -544,15 +621,11 @@ function MenuContent() {
                                         >
                                             {tab.label}
                                             {isActive && (
-                                                <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#05589c]"></span>
+                                                <span className="absolute left-0 right-0 -bottom-px h-[2px] bg-[#05589c]"></span>
                                             )}
                                         </button>
                                     );
                                 })}
-                            </div>
-                            {/* Línea divisoria con padding lateral - no llega a los extremos */}
-                            <div className="px-4 md:px-8">
-                                <div className="h-[1px] bg-[#9ca3af]"></div>
                             </div>
                         </div>
                     </div>
@@ -561,13 +634,12 @@ function MenuContent() {
 
             {/* Contenedor de las secciones del menú */}
             <div className="max-w-[1100px] mx-auto pb-12">
-                <div className="bg-[#fefeff] rounded-none md:rounded-b-2xl shadow-sm overflow-hidden">
-                    {menuError && (
-                        <div className="px-4 pt-8 text-center text-sm text-red-700">
-                            {menuError}
-                        </div>
+                <div className="bg-[#eaeff3] md:bg-[#fefeff] rounded-none md:rounded-b-2xl shadow-sm overflow-hidden">
+                    {status === "loading" && <MenuSkeleton />}
+                    {(status === "error" || status === "timeout") && (
+                        <MenuFeedback type={status} onRetry={retry} />
                     )}
-                    {tabs.map((tab) => {
+                    {status === "success" && tabs.map((tab) => {
                         const tabData = menuData[tab.id];
                         if (!tabData) return null;
                         return (

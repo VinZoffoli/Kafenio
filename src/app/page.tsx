@@ -256,14 +256,14 @@ export default function Home() {
             className="flex flex-col gap-3 md:gap-4 flex-1 w-full"
           >
             <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] group">
-              <img src="/assets/catering1.webp" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/assets/catering1.webp" alt="Kafenio catering spread with Greek dishes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="flex gap-3 md:gap-4">
               <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
-                <img src="/assets/catering2.webp" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/assets/catering2.webp" alt="Greek food catering platter by Kafenio" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
-                <img src="/assets/catering3.webp" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/assets/catering3.webp" alt="Kafenio catering setup for events in Decatur GA" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
             </div>
           </AnimateIn>
@@ -382,8 +382,8 @@ export default function Home() {
           <AnimateIn direction="up" delay={0}>
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 justify-center">
               <div className="flex items-center gap-2 md:contents">
-                <img src="/assets/icon_more_left.svg" alt="" className="w-[30px] md:w-[40px] lg:w-[50px] h-auto" />
-                <img src="/assets/icon_more_right.svg" alt="" className="w-[30px] md:w-[40px] lg:w-[50px] h-auto md:order-last" />
+                <img src="/assets/icon_more_left.svg" alt="" aria-hidden="true" className="w-[30px] md:w-[40px] lg:w-[50px] h-auto" />
+                <img src="/assets/icon_more_right.svg" alt="" aria-hidden="true" className="w-[30px] md:w-[40px] lg:w-[50px] h-auto md:order-last" />
               </div>
               <h2 className="text-[34px] sm:text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-epitaph text-[#85431a] text-center">
                 MORE WAYS TO ENJOY KAFENIO
@@ -398,7 +398,7 @@ export default function Home() {
                   <img src="/assets/icon_more1.svg" alt="Join the Club" className="w-[56px] md:w-[68px] h-auto" />
                 </div>
                 <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Join the Club</h3>
-                <img src="/assets/divider_brown.svg" alt="" className="w-[40px]" />
+                <img src="/assets/divider_brown.svg" alt="" aria-hidden="true" className="w-[40px]" />
                 <p className="lg:max-w-[400px] text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
                   Sign up, earn points, and score tasty rewards every time you visit.
                 </p>
@@ -410,7 +410,7 @@ export default function Home() {
                   <img src="/assets/icon_more2.svg" alt="Share the Flavor" className="w-[56px] md:w-[68px] h-auto" />
                 </div>
                 <h3 className="text-[22px] md:text-[26px] lg:text-[28px] font-bold font-kautiva text-[#6B2A00]">Share the Flavor</h3>
-                <img src="/assets/divider_brown.svg" alt="" className="w-[40px]" />
+                <img src="/assets/divider_brown.svg" alt="" aria-hidden="true" className="w-[40px]" />
                 <p className=" lg:max-w-[400px] text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-[#3d3d3d]">
                   Give the gift of good food, send a Kafenio Gift Card to someone you love.
                 </p>
@@ -421,10 +421,10 @@ export default function Home() {
       </section>
 
       {/* FIND US — text from left, map from right */}
-      <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center flex justify-center px-4 md:px-6">
+      <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center flex justify-center px-6">
         <div className="w-full max-w-[1100px]">
           <div
-            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
+            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full mx-3 lg:mx-0 flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
           >
             <AnimateIn
               direction="left"

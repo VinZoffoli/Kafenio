@@ -185,7 +185,7 @@ export default function ContactUs() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`${roboto.className} bg-[#05589c] text-white w-[150px] h-[42px] self-center rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
+                                    className={`${roboto.className} bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
                                 >
                                     {isSubmitting ? "Sending..." : "Send"}
                                 </button>
@@ -205,10 +205,10 @@ export default function ContactUs() {
             </section>
 
             {/* FIND US */}
-            <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center lg:bg-fixed flex justify-center px-4 md:px-6">
+            <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center lg:bg-fixed flex justify-center px-6">
                 <FadeIn className="w-full max-w-[1100px]">
                     <div
-                        className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
+                        className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full mx-3 lg:mx-0 flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
                     >
                         <div className="flex flex-col gap-3 lg:gap-4 w-full lg:min-w-[320px] lg:max-w-[400px] items-center lg:items-start text-center lg:text-left">
                             <img src="/assets/icon_find.svg" alt="icon" className="w-[32px] md:w-[36px] lg:w-[38px] h-auto" />

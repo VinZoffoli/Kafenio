@@ -2,6 +2,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import {
+    HouseIcon,
+    ForkKnifeIcon,
+    ChefHatIcon,
+    GiftIcon,
+    ConfettiIcon,
+    UsersThreeIcon,
+    BriefcaseIcon,
+    PhoneIcon,
+    InfoIcon,
+} from "@phosphor-icons/react";
 
 export default function Header() {
     const pathname = usePathname();
@@ -119,8 +130,8 @@ export default function Header() {
 
                                 {/* Contact Us */}
                                 <Link href="/contact-us" className={dropdownItemClass("/contact-us")}>
-                                    <div className="flex-shrink-0">
-                                        <img src="/assets/Icon.svg" alt="Contact" className="w-[48px] h-[48px]" />
+                                    <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                                        <PhoneIcon weight="duotone" size={28} color="#04589C" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-[16px] text-[#3d3d3d]">Contact Us</span>
@@ -130,8 +141,8 @@ export default function Header() {
 
                                 {/* Happenings */}
                                 <Link href="/happenings" className={dropdownItemClass("/happenings")}>
-                                    <div className="flex-shrink-0">
-                                        <img src="/assets/icon_happenings.svg" alt="Happenings" className="w-[48px] h-[48px]" />
+                                    <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                                        <ConfettiIcon weight="duotone" size={28} color="#04589C" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-[16px] text-[#3d3d3d]">Happenings</span>
@@ -141,8 +152,8 @@ export default function Header() {
 
                                 {/* Careers */}
                                 <Link href="/careers" className={dropdownItemClass("/careers")}>
-                                    <div className="flex-shrink-0">
-                                        <img src="/assets/icon_careers.svg" alt="Careers" className="w-[48px] h-[48px]" />
+                                    <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                                        <BriefcaseIcon weight="duotone" size={28} color="#04589C" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-[16px] text-[#3d3d3d]">Careers</span>
@@ -152,8 +163,8 @@ export default function Header() {
 
                                 {/* Join the Club */}
                                 <Link href="/join-the-club" className={dropdownItemClass("/join-the-club")}>
-                                    <div className="flex-shrink-0">
-                                        <img src="/assets/icon_join.svg" alt="Join" className="w-[48px] h-[48px]" />
+                                    <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                                        <UsersThreeIcon weight="duotone" size={28} color="#04589C" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-[16px] text-[#3d3d3d]">Join the Club</span>
@@ -163,8 +174,8 @@ export default function Header() {
 
                                 {/* About Us */}
                                 <Link href="/about" className={dropdownItemClass("/about")}>
-                                    <div className="flex-shrink-0">
-                                        <img src="/assets/icon_about.svg" alt="About" className="w-[48px] h-[48px]" />
+                                    <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                                        <InfoIcon weight="duotone" size={28} color="#04589C" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-[16px] text-[#3d3d3d]">About Us</span>
@@ -269,47 +280,65 @@ export default function Header() {
 
                 <nav className="flex-1 overflow-y-auto py-4 px-3">
                     <Link href="/" className={mobileLinkClass("/")}>
-                        <img src="/assets/icomobile_home.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <HouseIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Home</span>
                     </Link>
 
                     <Link href="/menu" className={mobileLinkClass("/menu")}>
-                        <img src="/assets/icomobile_menu.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <ForkKnifeIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Menu</span>
                     </Link>
 
                     <Link href="/catering" className={mobileLinkClass("/catering")}>
-                        <img src="/assets/icomobile_catering.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <ChefHatIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Catering</span>
                     </Link>
 
                     <Link href="/gift-card" className={mobileLinkClass("/gift-card")}>
-                        <img src="/assets/icomobile_giftcard.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <GiftIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Gift Card</span>
                     </Link>
 
                     <Link href="/happenings" className={mobileLinkClass("/happenings")}>
-                        <img src="/assets/icomobile_happenings.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <ConfettiIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Happenings</span>
                     </Link>
 
                     <Link href="/join-the-club" className={mobileLinkClass("/join-the-club")}>
-                        <img src="/assets/icomobile_jointheclub.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <UsersThreeIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Join The Club</span>
                     </Link>
 
                     <Link href="/careers" className={mobileLinkClass("/careers")}>
-                        <img src="/assets/icomobile_careers.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <BriefcaseIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Careers</span>
                     </Link>
 
                     <Link href="/contact-us" className={mobileLinkClass("/contact-us")}>
-                        <img src="/assets/icomobile_contactus.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <PhoneIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">Contact</span>
                     </Link>
 
                     <Link href="/about" className={mobileLinkClass("/about")}>
-                        <img src="/assets/icomobile_aboutus.svg" alt="" className="w-[48px] h-[48px]" />
+                        <div className="w-[48px] h-[48px] bg-[#dbeafe] flex items-center justify-center flex-shrink-0">
+                            <InfoIcon weight="duotone" size={28} color="#04589C" />
+                        </div>
                         <span className="text-[16px] font-semibold text-[#3d3d3d]">About Us</span>
                     </Link>
                 </nav>

@@ -273,7 +273,7 @@ export default function Careers() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`${roboto.className} bg-[#05589c] text-white w-[150px] h-[42px] self-center rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
+                                    className={`${roboto.className} bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
                                 >
                                     {isSubmitting ? "Sending..." : "Send"}
                                 </button>

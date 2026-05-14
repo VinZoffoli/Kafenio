@@ -127,6 +127,19 @@ body {
   animation: pulseGlow 2.2s ease-in-out infinite;
 }
 
+/* Reviews infinite carousel */
+@keyframes carousel-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.carousel-track {
+  width: max-content;
+  animation: carousel-scroll 40s linear infinite;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
