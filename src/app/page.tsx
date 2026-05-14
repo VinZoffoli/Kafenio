@@ -23,6 +23,8 @@ const roboto = Roboto({
 
 export default function Home() {
   return (
+    <>
+    <link rel="preload" as="image" href="/assets/background.webp" fetchPriority="high" />
     <main className="overflow-x-hidden">
 
       {/* HERO — parallax + spring logo + staggered buttons */}
@@ -118,6 +120,7 @@ export default function Home() {
                   <img
                     src="/assets/coffeemobile.webp"
                     alt="Coffee & Espresso"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </picture>
@@ -138,6 +141,7 @@ export default function Home() {
                   <img
                     src="/assets/breakfastmobile.webp"
                     alt="Breakfast"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </picture>
@@ -156,6 +160,7 @@ export default function Home() {
                   <img
                     src="/assets/beveragesmobile.png"
                     alt="Beverages"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </picture>
@@ -174,6 +179,7 @@ export default function Home() {
                   <img
                     src="/assets/dessertmobile.webp"
                     alt="Desserts"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </picture>
@@ -192,6 +198,7 @@ export default function Home() {
                   <img
                     src="/assets/lunchmobile.webp"
                     alt="Lunch + Dinner"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </picture>
@@ -256,14 +263,14 @@ export default function Home() {
             className="flex flex-col gap-3 md:gap-4 flex-1 w-full"
           >
             <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] group">
-              <img src="/assets/catering1.webp" alt="Kafenio catering spread with Greek dishes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/assets/catering1.webp" alt="Kafenio catering spread with Greek dishes" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="flex gap-3 md:gap-4">
               <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
-                <img src="/assets/catering2.webp" alt="Greek food catering platter by Kafenio" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/assets/catering2.webp" alt="Greek food catering platter by Kafenio" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="overflow-hidden h-[180px] md:h-[200px] lg:h-[220px] flex-1 group">
-                <img src="/assets/catering3.webp" alt="Kafenio catering setup for events in Decatur GA" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/assets/catering3.webp" alt="Kafenio catering setup for events in Decatur GA" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
             </div>
           </AnimateIn>
@@ -480,5 +487,6 @@ export default function Home() {
       </section>
 
     </main>
+    </>
   );
 }
