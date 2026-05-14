@@ -1,16 +1,10 @@
 "use client";
 
-import { Roboto } from "next/font/google";
 import { useForm } from "react-hook-form";
 import OpeningHours from "@/app/components/OpeningHours";
 import FadeIn from "@/app/components/FadeIn";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: ["600"],
-});
 
 const contactSchema = z.object({
     firstName: z
@@ -185,7 +179,7 @@ export default function ContactUs() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`${roboto.className} bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
+                                    className={`bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
                                 >
                                     {isSubmitting ? "Sending..." : "Send"}
                                 </button>
@@ -231,7 +225,7 @@ export default function ContactUs() {
                                 href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${roboto.className} bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
+                                className={`bg-[#04589C] text-white px-[20px] py-[10px] h-[42px] rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit hover:opacity-90 transition mt-2`}
                             >
                                 Open In Map
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">

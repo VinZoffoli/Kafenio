@@ -1,15 +1,9 @@
 "use client";
 
-import { Roboto } from "next/font/google";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import FadeIn from "@/app/components/FadeIn";
-
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: ["600"],
-});
 
 const careersSchema = z.object({
     firstName: z
@@ -273,7 +267,7 @@ export default function Careers() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`${roboto.className} bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
+                                    className={`bg-[#05589c] text-white w-full h-[42px] rounded-[8px] font-semibold text-[16px] hover:opacity-90 transition disabled:opacity-60 mt-2`}
                                 >
                                     {isSubmitting ? "Sending..." : "Send"}
                                 </button>

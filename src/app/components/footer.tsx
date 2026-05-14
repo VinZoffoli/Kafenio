@@ -1,20 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Roboto } from "next/font/google";
 import { MapPinIcon } from "@phosphor-icons/react";
-
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: ["400", "600", "700"],
-});
 
 export default function Footer() {
     const pathname = usePathname();
 
     const linkClass = (href: string) => {
         const isActive = pathname === href;
-        return `${roboto.className} relative w-fit ${
+        return `relative w-fit ${
             isActive ? "text-white font-semibold after:w-full" : "text-[#8cb2d1]"
         } text-[16px] leading-[21px] whitespace-nowrap hover:text-white transition-colors after:absolute after:left-0 after:-bottom-[2px] after:h-[2px] after:bg-white after:transition-all after:duration-300 ${
             isActive ? "" : "after:w-0 hover:after:w-full"
@@ -22,7 +16,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className={`${roboto.className} w-full bg-[#011424]`}>
+        <footer className="w-full bg-[#011424]">
 
             <div className="relative w-full h-[58px]">
                 <img

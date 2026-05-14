@@ -1,6 +1,6 @@
 import "./globals.css"
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { roboto, montserrat } from "@/app/fonts";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -25,11 +25,6 @@ export const metadata: Metadata = {
     },
 };
 
-const roboto = Roboto({
-    subsets: ['latin'],
-    weight: ['400', '500', '700'],
-    variable: '--font-roboto',
-});
 
 export default function RootLayout({
     children,
@@ -37,7 +32,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={roboto.variable}>
+        <html lang="en" className={`${roboto.variable} ${montserrat.variable}`}>
             <head>
                 <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
                 <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />

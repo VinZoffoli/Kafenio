@@ -1,9 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({ subsets: ["latin"], weight: ["600"] });
 
 const ArrowIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
@@ -52,7 +49,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
           <motion.a
             href="/order-online"
-            className={`${roboto.className} bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 transition-colors`}
+            className={`bg-[#04589C] text-white border border-[#04589C] hover:bg-white hover:text-[#04589C] px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] h-[44px] flex items-center gap-2 transition-colors`}
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.55, ease: "easeOut" }}
@@ -65,7 +62,7 @@ export default function HeroSection() {
 
           <motion.a
             href="/catering"
-            className={`${roboto.className} h-[44px] bg-white text-[#04589C] border border-[#04589C] hover:bg-[#04589C] hover:text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
+            className={`h-[44px] bg-white text-[#04589C] border border-[#04589C] hover:bg-[#04589C] hover:text-white px-[20px] py-[10px] w-[200px] sm:w-auto justify-center rounded-none font-semibold text-[16px] sm:text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 transition-colors`}
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.72, ease: "easeOut" }}

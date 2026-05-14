@@ -1,19 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Roboto, Montserrat } from "next/font/google";
 import { supabase, supabaseClientId } from "@/lib/supabase";
-
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: ["400", "600"],
-});
-
-
-const montserrat = Montserrat({
-    subsets: ["latin"],
-    weight: ["400", "600"],
-});
 
 const tabs = [
     { id: "breakfast", label: "Breakfast" },
@@ -228,10 +216,10 @@ function MenuItemCard({ item, index }: MenuItemCardProps) {
                 </div>
             )}
             <h4 className="text-[24px] md:text-[28px] font-epitaph text-[#022542] leading-tight uppercase">{item.name}</h4>
-            <p className={`${roboto.className} text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] text-[#525252] whitespace-pre-line`}>
+            <p className={`text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] text-[#525252] whitespace-pre-line`}>
                 {item.description}
             </p>
-            <p className={`${roboto.className} text-[14px] md:text-[16px] font-semibold text-[#525252]`}>
+            <p className={`text-[14px] md:text-[16px] font-semibold text-[#525252]`}>
                 {item.price}
             </p>
         </div>
@@ -371,7 +359,7 @@ function MenuFeedback({ type, onRetry }: { type: "error" | "timeout"; onRetry: (
                 <h3 className="font-epitaph text-[22px] text-[#043e6f] mb-1">
                     {isTimeout ? "TAKING TOO LONG" : "SOMETHING WENT WRONG"}
                 </h3>
-                <p className={`${roboto.className} text-[14px] text-[#9ca3af] max-w-[320px] mx-auto`}>
+                <p className={`text-[14px] text-[#9ca3af] max-w-[320px] mx-auto`}>
                     {isTimeout
                         ? "The menu is taking longer than expected. Check your connection and try again."
                         : "We couldn't load the menu right now. Please try again."}
@@ -379,7 +367,7 @@ function MenuFeedback({ type, onRetry }: { type: "error" | "timeout"; onRetry: (
             </div>
             <button
                 onClick={onRetry}
-                className={`${roboto.className} bg-[#04589C] text-white px-6 h-[42px] font-semibold text-[14px] hover:opacity-90 transition flex items-center gap-2`}
+                className={`bg-[#04589C] text-white px-6 h-[42px] font-semibold text-[14px] hover:opacity-90 transition flex items-center gap-2`}
             >
                 Try Again
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -607,7 +595,7 @@ function MenuContent() {
                 <div className="max-w-[1100px] mx-auto mt-0 md:mt-[70px]">
                     <div className="bg-[#fefeff] rounded-none md:rounded-t-2xl shadow-[0_-2px_8px_rgba(0,0,0,0.04)]">
                         <div ref={tabsContainerRef} className="overflow-x-auto scrollbar-hide">
-                            <div className={`${montserrat.className} flex items-center gap-5 md:gap-10 px-4 md:px-8 pt-4 md:pt-5 pb-0 whitespace-nowrap justify-start md:justify-center`}>
+                            <div className="font-montserrat flex items-center gap-5 md:gap-10 px-4 md:px-8 pt-4 md:pt-5 pb-0 whitespace-nowrap justify-start md:justify-center">
                                 {tabs.map((tab) => {
                                     const isActive = activeTab === tab.id;
                                     return (

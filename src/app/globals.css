@@ -39,6 +39,7 @@
   --font-kautiva: "Kautiva", serif;
   --font-gcgrind: "GCGrind", sans-serif;
   --font-roboto: var(--font-roboto), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -172,6 +173,9 @@ body {
     }
     .font-gcgrind {
         font-family: "GCGrind", sans-serif;
+    }
+    .font-montserrat {
+        font-family: var(--font-montserrat), sans-serif;
     }
 }
 
