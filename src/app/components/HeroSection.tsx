@@ -31,6 +31,8 @@ export default function HeroSection() {
           src="/assets/background.webp"
           alt="Hero background"
           className="w-full h-full object-cover"
+          fetchPriority="high"
+          loading="eager"
         />
       </motion.div>
 

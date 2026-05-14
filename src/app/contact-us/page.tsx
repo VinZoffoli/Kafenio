@@ -242,6 +242,7 @@ export default function ContactUs() {
                         <div className="flex-1 w-full overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.4419279243434!2d-84.27833129999999!3d33.775084299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f507f2e441c751%3A0xf9b29f3014538356!2sKafenio%20Avondale!5e0!3m2!1ses-419!2scr!4v1776889049384!5m2!1ses-419!2scr"
+                                title="Kafenio location on Google Maps"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}

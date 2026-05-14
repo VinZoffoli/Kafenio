@@ -39,6 +39,10 @@ export default function RootLayout({
     return (
         <html lang="en" className={roboto.variable}>
             <head>
+                <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+                <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+                <link rel="preconnect" href="https://kqibgbvdgxrjhdyfoxvm.supabase.co" crossOrigin="anonymous" />
+                <link rel="preload" href="/fonts/Kautiva Pro Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
                 <link rel="stylesheet" href="https://use.typekit.net/suv6wse.css" />
             </head>
             <body className="relative">

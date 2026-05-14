@@ -253,6 +253,7 @@ export default function Header() {
                 className={`lg:hidden fixed inset-0 h-[100dvh] w-full bg-white z-[100] transform transition-transform duration-300 ease-in-out flex flex-col ${menuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
                     }`}
                 aria-hidden={!menuOpen}
+                inert={!menuOpen}
             >
                 <div className="flex items-center justify-between h-[72px] px-4 border-b flex-shrink-0">
                     <img src="/assets/logokafenio.svg" alt="logo" className="w-[140px]" />
