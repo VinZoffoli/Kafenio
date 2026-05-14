@@ -1,10 +1,34 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { MapPinIcon } from "@phosphor-icons/react";
+import { supabase, supabaseClientId } from "@/lib/supabase";
+
+const FALLBACK_ADDRESS = "2700 E College Ave #3000, Decatur, GA 30030, United States";
+const FALLBACK_PHONE = "678-515-3700";
 
 export default function Footer() {
     const pathname = usePathname();
+    const [address, setAddress] = useState(FALLBACK_ADDRESS);
+    const [phone, setPhone] = useState(FALLBACK_PHONE);
+
+    useEffect(() => {
+        let isMounted = true;
+        async function load() {
+            const { data: rows } = await supabase
+                .from("locations")
+                .select("address, phone")
+                .eq("restaurant_id", supabaseClientId)
+                .limit(1);
+            if (rows?.[0] && isMounted) {
+                if (rows[0].address) setAddress(rows[0].address);
+                if (rows[0].phone) setPhone(rows[0].phone);
+            }
+        }
+        load();
+        return () => { isMounted = false; };
+    }, []);
 
     const linkClass = (href: string) => {
         const isActive = pathname === href;
@@ -45,7 +69,7 @@ export default function Footer() {
                         className="flex items-start gap-1.5 text-[#979797] hover:text-white transition-colors leading-[20px] text-[13px] lg:text-[14px]"
                     >
                         <MapPinIcon weight="duotone" size={16} className="flex-shrink-0 mt-[2px]" />
-                        <span className="underline underline-offset-2">2700 E College Ave #3000, Decatur, GA 30030, United States</span>
+                        <span className="underline underline-offset-2">{address}</span>
                     </a>
 
                     {/* Botón */}
@@ -127,8 +151,8 @@ export default function Footer() {
                     {/* Phone */}
                     <div className="flex flex-col items-center lg:items-start">
                         <p className="text-white font-bold font-kautiva text-[18px] leading-[100%] mb-1">Phone</p>
-                        <a href="tel:6785153700" className="text-[#8cb2d1] text-[16px] hover:text-white transition">
-                            678-515-3700
+                        <a href={`tel:${phone.replace(/\D/g, "")}`} className="text-[#8cb2d1] text-[16px] hover:text-white transition">
+                            {phone}
                         </a>
                     </div>
                 </div>

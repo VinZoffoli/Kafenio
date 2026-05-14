@@ -279,13 +279,13 @@ function SubSectionBlock({ title, subtitle, footnote, items, startIndex }: SubSe
                 const dressingLine = lines.find(l => l.includes("Dressings:"));
                 const addonLines = lines.filter(l => !l.includes("Dressings:"));
                 return (
-                    <div className="mt-8 md:mt-10 px-4 flex justify-center">
-                        <div className="w-full max-w-[720px] border border-[#c8d8e8] bg-[#f4f8fc] px-6 py-5 md:px-8 md:py-6">
+                    <div className="mt-8 md:mt-10 px-4 md:px-8">
+                        <div className="w-full border border-[#c8d8e8] bg-[#f4f8fc] px-6 py-5 md:px-8 md:py-6 text-center">
                             <p className="text-[11px] md:text-[12px] font-semibold tracking-[0.12em] uppercase text-[#04589C] mb-3">
                                 Customize Your Order
                             </p>
                             {addonLines.length > 0 && (
-                                <ul className="flex flex-col gap-2 mb-3">
+                                <ul className="flex flex-col gap-2 mb-3 items-center">
                                     {addonLines.map((line, i) => {
                                         const isTitle = line === line.toUpperCase() && line.trim().length > 0;
                                         return isTitle ? (
@@ -293,11 +293,8 @@ function SubSectionBlock({ title, subtitle, footnote, items, startIndex }: SubSe
                                                 {line}
                                             </li>
                                         ) : (
-                                            <li key={i} className="flex items-start gap-2">
-                                                <span className="mt-[5px] shrink-0 w-[6px] h-[6px] rounded-full bg-[#04589C] opacity-60" />
-                                                <span className="font-kautiva text-[16px] md:text-[18px] text-[#022542] leading-snug">
-                                                    {line}
-                                                </span>
+                                            <li key={i} className="font-kautiva text-[16px] md:text-[18px] text-[#022542] leading-snug">
+                                                {line}
                                             </li>
                                         );
                                     })}

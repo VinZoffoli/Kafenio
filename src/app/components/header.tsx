@@ -125,8 +125,11 @@ export default function Header() {
                                 <img src="/assets/Arrow_Down.svg" alt="arrow" className="w-[20px] h-[20px]" />
                             </div>
 
+                            {/* Puente invisible bajo el botón More — solo el ancho del botón */}
+                            <div className="absolute left-1/2 -translate-x-1/2 top-full w-[82px] h-5 bg-transparent" />
+
                             {/* Dropdown - centrado en pantalla */}
-                            <div className="fixed left-1/2 -translate-x-1/2 mt-4 w-[800px] bg-white  shadow-xl p-6 grid grid-cols-2 gap-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div className={`fixed left-1/2 -translate-x-1/2 w-[800px] bg-white shadow-xl p-6 grid grid-cols-2 gap-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-150 group-hover:delay-0 ${scrolled ? "top-[60px]" : "top-[72px] lg:top-[80px]"}`}>
 
                                 {/* Contact Us */}
                                 <Link href="/contact-us" className={dropdownItemClass("/contact-us")}>

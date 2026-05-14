@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 import HappeningsCards from "@/app/components/Happeningscards";
 import OpeningHours from "@/app/components/OpeningHours";
+import LocationInfo from "@/app/components/LocationInfo";
 import AnimateIn from "@/app/components/AnimateIn";
 import HeroSection from "@/app/components/HeroSection";
 import Link from "next/link";
@@ -431,7 +432,7 @@ export default function Home() {
       <section className="mt-[-2px] w-full py-[50px] md:py-[60px] lg:py-[80px] bg-[url('/assets/fondo_giftcard.webp')] bg-cover bg-center flex justify-center px-6">
         <div className="w-full max-w-[1100px]">
           <div
-            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full mx-3 lg:mx-0 flex flex-col lg:flex-row items-center gap-[24px] lg:gap-[60px] p-10 md:p-14 lg:p-[80px]"
+            className="bg-[url('/assets/fondo_findusmobile.webp')] lg:bg-[url('/assets/fondo_findus.png')] bg-no-repeat bg-contain lg:bg-contain bg-center w-full mx-3 lg:mx-0 flex flex-col lg:flex-row items-center gap-[16px] lg:gap-[60px] p-6 md:p-14 lg:p-[80px]"
           >
             <AnimateIn
               direction="left"
@@ -441,17 +442,7 @@ export default function Home() {
               <h2 className="text-[34px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-tight font-epitaph text-[#85431a]">
                 FIND US
               </h2>
-              <div className="w-full flex flex-col items-center lg:items-start">
-                <p className="text-[20px] md:text-[22px] lg:text-[24px] font-bold font-kautiva text-[#ab5622]">Location</p>
-                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-1 lg:gap-2 mt-1">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                    <path d="M11.5 11.2998C10.837 11.2998 10.2011 11.0364 9.73223 10.5676C9.26339 10.0987 9 9.46285 9 8.7998C9 8.13676 9.26339 7.50088 9.73223 7.03204C10.2011 6.5632 10.837 6.2998 11.5 6.2998C12.163 6.2998 12.7989 6.5632 13.2678 7.03204C13.7366 7.50088 14 8.13676 14 8.7998C14 9.12811 13.9353 9.4532 13.8097 9.75651C13.6841 10.0598 13.4999 10.3354 13.2678 10.5676C13.0356 10.7997 12.76 10.9839 12.4567 11.1095C12.1534 11.2351 11.8283 11.2998 11.5 11.2998ZM11.5 1.7998C9.64348 1.7998 7.86301 2.5373 6.55025 3.85006C5.2375 5.16281 4.5 6.94329 4.5 8.7998C4.5 14.0498 11.5 21.7998 11.5 21.7998C11.5 21.7998 18.5 14.0498 18.5 8.7998C18.5 6.94329 17.7625 5.16281 16.4497 3.85006C15.137 2.5373 13.3565 1.7998 11.5 1.7998Z" fill="#f17930" />
-                  </svg>
-                  <p className="text-[14px] lg:text-[16px] leading-[20px] text-[#333] font-bold">
-                    2700 E College Ave #3000,<br />Decatur, GA 30030, United States
-                  </p>
-                </div>
-              </div>
+              <LocationInfo />
               <OpeningHours />
               <a
                 href="https://maps.app.goo.gl/78srAW178dbCs2pW9"
@@ -469,7 +460,7 @@ export default function Home() {
             <AnimateIn
               direction="right"
               delay={0.12}
-              className="flex-1 w-full overflow-hidden h-[220px] md:h-[300px] lg:h-[420px]"
+              className="w-[75%] mx-auto overflow-hidden h-[90px] md:flex-1 md:w-full md:h-[300px] lg:h-[420px]"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.4419279243434!2d-84.27833129999999!3d33.775084299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f507f2e441c751%3A0xf9b29f3014538356!2sKafenio%20Avondale!5e0!3m2!1ses-419!2scr!4v1776889049384!5m2!1ses-419!2scr"
