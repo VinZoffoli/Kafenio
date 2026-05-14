@@ -273,14 +273,55 @@ function SubSectionBlock({ title, subtitle, footnote, items, startIndex }: SubSe
                 <div className="text-center text-gray-400 italic px-4">Coming soon...</div>
             )}
 
-            {/* Footnote (texto debajo de las cards) */}
-            {footnote && (
-                <div className="text-center mt-8 md:mt-10 px-4">
-                    <p className={`font-kautiva text-[19px] md:text-[24px] font-light text-[#022542] leading-[32px] md:leading-[38px] whitespace-pre-line`}>
-                        {footnote}
-                    </p>
-                </div>
-            )}
+            {/* Footnote */}
+            {footnote && (() => {
+                const lines = footnote.split("\n").filter(l => l.trim() !== "");
+                const dressingLine = lines.find(l => l.includes("Dressings:"));
+                const addonLines = lines.filter(l => !l.includes("Dressings:"));
+                return (
+                    <div className="mt-8 md:mt-10 px-4 flex justify-center">
+                        <div className="w-full max-w-[720px] border border-[#c8d8e8] bg-[#f4f8fc] px-6 py-5 md:px-8 md:py-6">
+                            <p className="text-[11px] md:text-[12px] font-semibold tracking-[0.12em] uppercase text-[#04589C] mb-3">
+                                Customize Your Order
+                            </p>
+                            {addonLines.length > 0 && (
+                                <ul className="flex flex-col gap-2 mb-3">
+                                    {addonLines.map((line, i) => {
+                                        const isTitle = line === line.toUpperCase() && line.trim().length > 0;
+                                        return isTitle ? (
+                                            <li key={i} className="font-semibold text-[13px] md:text-[14px] tracking-wide uppercase text-[#04589C]">
+                                                {line}
+                                            </li>
+                                        ) : (
+                                            <li key={i} className="flex items-start gap-2">
+                                                <span className="mt-[5px] shrink-0 w-[6px] h-[6px] rounded-full bg-[#04589C] opacity-60" />
+                                                <span className="font-kautiva text-[16px] md:text-[18px] text-[#022542] leading-snug">
+                                                    {line}
+                                                </span>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            )}
+                            {dressingLine && (() => {
+                                const colonIdx = dressingLine.indexOf(":");
+                                const label = dressingLine.slice(0, colonIdx + 1);
+                                const items = dressingLine.slice(colonIdx + 1).trim();
+                                return (
+                                    <div className="border-t border-[#c8d8e8] pt-3 mt-1">
+                                        <span className="font-semibold text-[12px] md:text-[13px] tracking-wide uppercase text-[#04589C] mr-1">
+                                            {label}
+                                        </span>
+                                        <span className="font-kautiva text-[15px] md:text-[17px] text-[#444] leading-snug">
+                                            {items}
+                                        </span>
+                                    </div>
+                                );
+                            })()}
+                        </div>
+                    </div>
+                );
+            })()}
         </div>
     );
 }
